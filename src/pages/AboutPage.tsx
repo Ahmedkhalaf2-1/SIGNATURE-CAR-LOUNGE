@@ -155,7 +155,6 @@ function PageLight3() {
             <h2>{t('Care shaped around the individual vehicle.')}</h2>
             <div className="scl-about-process">
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('01 / SIGNATURE')}</p>
                 <h3>{t('Look closer')}</h3>
                 <p>
                   {t(
@@ -164,7 +163,6 @@ function PageLight3() {
                 </p>
               </div>
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('02 / SIGNATURE')}</p>
                 <h3>{t('Listen first')}</h3>
                 <p>
                   {t(
@@ -173,7 +171,6 @@ function PageLight3() {
                 </p>
               </div>
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('03 / SIGNATURE')}</p>
                 <h3>{t('Keep it considered')}</h3>
                 <p>
                   {t(

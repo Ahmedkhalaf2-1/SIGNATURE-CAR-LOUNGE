@@ -26,7 +26,7 @@ export function ServicesGrid() {
               <img loading="lazy" src={s.image} alt={t(s.alt)} />
               <span className="svc-index">{String(i + 1).padStart(2, '0')} / 06</span>
               <div className="svc-info">
-                <span className="kicker">{t('Signature expertise')}</span>
+                <span className="kicker">{t('Expertise')}</span>
                 <h3>{t(s.title)}</h3>
                 <p>{t(s.tagline)}</p>
               </div>

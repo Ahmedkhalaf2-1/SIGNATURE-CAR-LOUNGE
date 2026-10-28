@@ -82,22 +82,22 @@ function DetailScope() {
         </div>
         <div className="detail-scope-grid">
           <article>
-            <span className="detail-number">{t('01 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('Priority areas')}</h3>
             <p>{t('Discuss the panels most exposed in everyday driving and identify where coverage matters most.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Your coverage')}</h3>
             <p>{t('Compare selected panels, front-end protection and wider coverage around your priorities.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('A considered fit')}</h3>
             <p>{t('Review panel edges, component exclusions and installation details before agreeing the scope.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('04 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('04')}</span>
             <h3>{t('Care after fitting')}</h3>
             <p>{t('Understand the chosen film’s cleaning, inspection and maintenance guidance.')}</p>
           </article>
@@ -116,7 +116,7 @@ function DetailProcess() {
         <h2>{t('Choose protection around the way you drive.')}</h2>
         <div className="detail-process-grid">
           <article>
-            <span className="detail-number">{t('01 / THE APPROACH')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('Prioritise the exposure')}</h3>
             <p>
               {t(
@@ -125,7 +125,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / THE APPROACH')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Define the coverage')}</h3>
             <p>
               {t(
@@ -134,7 +134,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / THE APPROACH')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('Plan long-term care')}</h3>
             <p>
               {t(

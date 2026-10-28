@@ -9,7 +9,7 @@ export function Philosophy() {
     <section className="philosophy chapter" id="philosophy">
       <div className="container philosophy-grid">
         <Reveal>
-          <div className="kicker intro-label">{t('01 / Signature Philosophy')}</div>
+          <div className="kicker intro-label">{t('Philosophy')}</div>
           <h2 className="serif">
             {t('An obsession')}
             <br />

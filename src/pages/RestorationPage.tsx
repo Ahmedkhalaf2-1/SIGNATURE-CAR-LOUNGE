@@ -82,22 +82,22 @@ function DetailScope() {
         </div>
         <div className="detail-scope-grid">
           <article>
-            <span className="detail-number">{t('01 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('The starting point')}</h3>
             <p>{t('Review condition, visible concerns and previous repairs before deciding on priorities.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Paint & presentation')}</h3>
             <p>{t('Discuss the finish you want and distinguish cosmetic renewal from specialist repairs.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('Interior & trim')}</h3>
             <p>{t('Explore materials, trim and cabin details with respect for the vehicle’s character.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('04 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('04')}</span>
             <h3>{t('A phased plan')}</h3>
             <p>{t('Agree stages, dependencies and sourcing needs so the proposed work has a clear direction.')}</p>
           </article>
@@ -116,7 +116,7 @@ function DetailProcess() {
         <h2>{t('Preserve the character. Plan the renewal.')}</h2>
         <div className="detail-process-grid">
           <article>
-            <span className="detail-number">{t('01 / THE APPROACH')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('Understand the starting point')}</h3>
             <p>
               {t(
@@ -125,7 +125,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / THE APPROACH')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Build a phased scope')}</h3>
             <p>
               {t(
@@ -134,7 +134,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / THE APPROACH')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('Respect the original character')}</h3>
             <p>
               {t(

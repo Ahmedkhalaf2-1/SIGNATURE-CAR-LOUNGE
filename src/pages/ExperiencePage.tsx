@@ -42,7 +42,7 @@ function PageLight() {
     <section className="scl-page-light experience-journey">
       <div className="scl-page-wrap scl-page-split">
         <div>
-          <div className="scl-page-kicker">{t('03 / THE SIGNATURE EXPERIENCE')}</div>
+          <div className="scl-page-kicker">{t('THE EXPERIENCE')}</div>
           <h2>
             {t('Considered care.')}
             <br />
@@ -127,7 +127,7 @@ function PageDark2() {
             <h2>{t('A clear journey from enquiry to aftercare.')}</h2>
             <div className="experience-cards">
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('01 / SIGNATURE')}</p>
+                <p className="signature-kicker">{t('SIGNATURE')}</p>
                 <h3>{t('Start with your priorities')}</h3>
                 <p>
                   {t(
@@ -136,7 +136,7 @@ function PageDark2() {
                 </p>
               </div>
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('02 / SIGNATURE')}</p>
+                <p className="signature-kicker">{t('SIGNATURE')}</p>
                 <h3>{t('Agree the details')}</h3>
                 <p>
                   {t(
@@ -145,7 +145,7 @@ function PageDark2() {
                 </p>
               </div>
               <div className="scl-page-rule">
-                <p className="signature-kicker">{t('03 / SIGNATURE')}</p>
+                <p className="signature-kicker">{t('SIGNATURE')}</p>
                 <h3>{t('Understand the next steps')}</h3>
                 <p>
                   {t(

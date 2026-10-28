@@ -195,7 +195,6 @@ function Prep() {
         </h2>
         <div className="fq-cards">
           <article>
-            <span className="fq-kicker">{t('01 / SIGNATURE')}</span>
             <h3>{t('Existing treatments')}</h3>
             <p>
               {t(
@@ -204,7 +203,6 @@ function Prep() {
             </p>
           </article>
           <article>
-            <span className="fq-kicker">{t('02 / SIGNATURE')}</span>
             <h3>{t('Personal belongings')}</h3>
             <p>
               {t(
@@ -213,7 +211,6 @@ function Prep() {
             </p>
           </article>
           <article>
-            <span className="fq-kicker">{t('03 / SIGNATURE')}</span>
             <h3>{t('Aftercare')}</h3>
             <p>
               {t(

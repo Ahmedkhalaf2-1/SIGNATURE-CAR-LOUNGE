@@ -11,7 +11,7 @@ export function Difference() {
     <section className="difference chapter" id="difference">
       <div className="container diff-grid">
         <Reveal>
-          <div className="kicker intro-label">{t('05 / The Signature Difference')}</div>
+          <div className="kicker intro-label">{t('The Difference')}</div>
           <h2 className="serif">
             {t('The smallest')}
             <br />

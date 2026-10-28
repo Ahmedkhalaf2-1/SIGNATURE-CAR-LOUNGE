@@ -58,7 +58,6 @@ function ServiceCollection() {
                 alt={t('Bespoke Detailing automotive inspiration')}
                 loading="lazy"
               />
-              <span>{t('01 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Bespoke Detailing')}</h3>
@@ -80,7 +79,6 @@ function ServiceCollection() {
                 alt={t('Paint Protection Film automotive inspiration')}
                 loading="lazy"
               />
-              <span>{t('02 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Paint Protection Film')}</h3>
@@ -102,7 +100,6 @@ function ServiceCollection() {
                 alt={t('Ceramic Coating automotive inspiration')}
                 loading="lazy"
               />
-              <span>{t('03 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Ceramic Coating')}</h3>
@@ -118,7 +115,6 @@ function ServiceCollection() {
           <article className="service-card">
             <Link to="/signature-body-kits/" className="service-image" aria-label={t('Explore Body Kits')}>
               <img src={img('fbb4cb03-08c1-45f4-9e93-3bcdcad22fbd-1.webp')} alt={t('Body Kits automotive inspiration')} loading="lazy" />
-              <span>{t('04 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Body Kits')}</h3>
@@ -132,7 +128,6 @@ function ServiceCollection() {
           <article className="service-card">
             <Link to="/signature-restoration/" className="service-image" aria-label={t('Explore Restoration')}>
               <img src={img('941e188e-50da-4f35-b0fe-b7edde1bf792-1.webp')} alt={t('Restoration automotive inspiration')} loading="lazy" />
-              <span>{t('05 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Restoration')}</h3>
@@ -150,7 +145,6 @@ function ServiceCollection() {
                 alt={t('Automotive Spa automotive inspiration')}
                 loading="lazy"
               />
-              <span>{t('06 / SIGNATURE')}</span>
             </Link>
             <div className="service-body">
               <h3>{t('Automotive Spa')}</h3>
@@ -190,7 +184,6 @@ function Direction() {
         <div className="direction-grid">
           <article className="direction-card">
             <div className="direction-top">
-              <span>{t('01 / REFINE')}</span>
               <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
                 <path d="M16 3l3.5 9.5L29 16l-9.5 3.5L16 29l-3.5-9.5L3 16l9.5-3.5L16 3Z" stroke="currentColor" />
               </svg>
@@ -213,7 +206,6 @@ function Direction() {
           </article>
           <article className="direction-card">
             <div className="direction-top">
-              <span>{t('02 / PROTECT')}</span>
               <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
                 <path d="M16 3 27 7v9c0 6-7 11-11 13C12 27 5 22 5 16V7L16 3Z" stroke="currentColor" />
                 <path d="m11 16 3 3 7-7" stroke="currentColor" />
@@ -237,7 +229,6 @@ function Direction() {
           </article>
           <article className="direction-card">
             <div className="direction-top">
-              <span>{t('03 / PERSONALISE')}</span>
               <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
                 <path d="m16 3 13 13-13 13L3 16 16 3Z" stroke="currentColor" />
                 <path d="m16 10 6 6-6 6-6-6 6-6Z" stroke="currentColor" />

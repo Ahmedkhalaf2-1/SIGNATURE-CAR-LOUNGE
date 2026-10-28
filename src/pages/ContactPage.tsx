@@ -115,7 +115,7 @@ function Section() {
         </div>
         <div className="ct-cards">
           <article className="ct-card">
-            <span className="ct-label">{t('01 / CARE & PROTECTION')}</span>
+            <span className="ct-label">{t('CARE & PROTECTION')}</span>
             <h3>{t('Ask about a service.')}</h3>
             <p>{t('Tell us which surfaces or areas concern you, and what you would like to protect or refresh.')}</p>
             <Link to="/signature-services/" className="ct-link">
@@ -123,7 +123,7 @@ function Section() {
             </Link>
           </article>
           <article className="ct-card">
-            <span className="ct-label">{t('02 / A COMPLETE VISION')}</span>
+            <span className="ct-label">{t('A COMPLETE VISION')}</span>
             <h3>{t('Bring it together.')}</h3>
             <p>
               {t('Considering detailing, protection and styling together? Share your priorities so the right sequence can be discussed.')}
@@ -133,7 +133,7 @@ function Section() {
             </Link>
           </article>
           <article className="ct-card">
-            <span className="ct-label">{t('03 / YOUR NEXT VISIT')}</span>
+            <span className="ct-label">{t('YOUR NEXT VISIT')}</span>
             <h3>{t('Plan the details.')}</h3>
             <p>{t('Share a preferred visit window and any relevant deadline. Confirm appointment arrangements before travelling.')}</p>
             <Link to="/signature-faq/" className="ct-link">

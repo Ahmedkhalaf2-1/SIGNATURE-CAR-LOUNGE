@@ -12,7 +12,7 @@ export function Experience() {
   return (
     <section className="experience" id="experience">
       <div className="container">
-        <Reveal className="kicker intro-label">{t('03 / The Signature Experience')}</Reveal>
+        <Reveal className="kicker intro-label">{t('The Experience')}</Reveal>
         <Reveal as="h2" className="serif">
           {t('Beyond the finish.')}
           <br />

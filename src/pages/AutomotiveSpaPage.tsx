@@ -45,7 +45,6 @@ function PageLight() {
       <div className="scl-page-wrap">
         <div className="scl-page-split">
           <div>
-            <div className="scl-page-kicker">{t('AUTOMOTIVE SPA')}</div>
             <h2>{t('A fresh feeling. Every journey.')}</h2>
             <div className="scl-page-copy">
               {t(
@@ -84,22 +83,22 @@ function DetailScope() {
         </div>
         <div className="detail-scope-grid">
           <article>
-            <span className="detail-number">{t('01 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('Exterior care')}</h3>
             <p>{t('Discuss washing and presentation priorities, including existing coatings or sensitive finishes.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Interior comfort')}</h3>
             <p>{t('Identify the upholstery, carpets, trim and touchpoints you would like refreshed.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('Finishing details')}</h3>
             <p>{t('Consider wheels, glass and the smaller details that complete the presentation.')}</p>
           </article>
           <article>
-            <span className="detail-number">{t('04 / CONSIDERED CARE')}</span>
+            <span className="detail-number">{t('04')}</span>
             <h3>{t('Your care routine')}</h3>
             <p>{t('Choose a practical level of care around your driving habits and maintenance needs.')}</p>
           </article>
@@ -118,7 +117,7 @@ function DetailProcess() {
         <h2>{t('A fresh start, inside and out.')}</h2>
         <div className="detail-process-grid">
           <article>
-            <span className="detail-number">{t('01 / THE APPROACH')}</span>
+            <span className="detail-number">{t('01')}</span>
             <h3>{t('Exterior presentation')}</h3>
             <p>
               {t(
@@ -127,7 +126,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('02 / THE APPROACH')}</span>
+            <span className="detail-number">{t('02')}</span>
             <h3>{t('Interior comfort')}</h3>
             <p>
               {t(
@@ -136,7 +135,7 @@ function DetailProcess() {
             </p>
           </article>
           <article>
-            <span className="detail-number">{t('03 / THE APPROACH')}</span>
+            <span className="detail-number">{t('03')}</span>
             <h3>{t('A practical care routine')}</h3>
             <p>
               {t(
