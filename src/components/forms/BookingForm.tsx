@@ -14,17 +14,39 @@ export function BookingForm() {
   const [params] = useSearchParams()
   const queryService = params.get('service')
   const [service, setService] = useState(() => serviceFromQuery(queryService))
-  const [submitted, setSubmitted] = useState(false)
+  const [state, setState] = useState<{ phase: 'idle' | 'submitting' | 'success' | 'error'; message?: string }>({ phase: 'idle' })
 
   // Re-apply the preselection when the query string changes while the page stays mounted.
   useEffect(() => {
     setService(serviceFromQuery(queryService))
   }, [queryService])
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // TODO: no backend was provided. Send `new FormData(e.currentTarget)` to the consultation endpoint here.
-    setSubmitted(true)
+    if (state.phase === 'submitting') return
+    const form = e.currentTarget
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>
+    for (const key of ['name', 'email', 'phone', 'vehicle'] as const) {
+      if (!data[key]?.trim()) {
+        setState({ phase: 'error', message: 'Please complete all required fields.' })
+        return
+      }
+    }
+    setState({ phase: 'submitting' })
+    try {
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      const json = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null
+      if (!res.ok || !json?.ok) throw new Error(json?.error || 'Something went wrong. Please try again.')
+      form.reset()
+      setService(serviceFromQuery(queryService))
+      setState({ phase: 'success' })
+    } catch (err) {
+      setState({ phase: 'error', message: err instanceof Error ? err.message : 'Something went wrong. Please try again.' })
+    }
   }
 
   return (
@@ -86,11 +108,18 @@ export function BookingForm() {
             <textarea name="message" id="form-field-message" rows={4} />
           </div>
           <div className="booking-form__field booking-form__field--wide">
-            <button type="submit">Send consultation request</button>
+            <button type="submit" disabled={state.phase === 'submitting'} aria-busy={state.phase === 'submitting'}>
+              {state.phase === 'submitting' ? 'Sending…' : 'Send consultation request'}
+            </button>
           </div>
-          {submitted && (
+          {state.phase === 'success' && (
             <p className="booking-form__status booking-form__field--wide" role="status">
               Your submission was successful.
+            </p>
+          )}
+          {state.phase === 'error' && (
+            <p className="booking-form__status booking-form__field--wide" role="alert">
+              {state.message}
             </p>
           )}
         </form>
