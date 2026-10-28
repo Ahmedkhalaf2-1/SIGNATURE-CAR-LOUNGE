@@ -33,6 +33,7 @@ export async function sendFormEmail(kind: FormKind, values: FormValues): Promise
     '</table>'
   const text = rows.map((r) => `${r.label}: ${r.value || '—'}`).join('\n')
 
+  // from/to come from server config only; the visitor's (validated, single-line) email is used solely as replyTo.
   const { error } = await client.emails.send({
     from: process.env.EMAIL_FROM || 'Signature Car Lounge Website <website@signaturecarslounge.com>',
     to: process.env.CONTACT_RECIPIENT || 'info@signaturecarslounge.com',
@@ -41,5 +42,6 @@ export async function sendFormEmail(kind: FormKind, values: FormValues): Promise
     html,
     text,
   })
-  if (error) throw new EmailError(`Resend rejected the email: ${error.name} ${error.message}`)
+  // Keep only Resend's error category; its free-text message is never logged or returned.
+  if (error) throw new EmailError(`Resend rejected the email: ${String(error.name)}`)
 }
