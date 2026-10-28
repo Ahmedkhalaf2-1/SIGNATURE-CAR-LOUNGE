@@ -1,0 +1,38 @@
+/* Design tokens extracted from the captured CSS (home #scl-reference, brand override block, interior pages). */
+:root {
+  /* palette */
+  --color-night: #0b0914;
+  --color-deep: #1a082c;
+  --color-violet: #5c2483;
+  --color-accent: #8e24aa;
+  --color-platinum: #d4d7df;
+  --color-lilac: #bc91e8;
+  --color-lilac-soft: #cba7e3;
+  --color-muted: #a49daa;
+  --color-text: #f4f1f3;
+  --color-line: #ffffff32;
+
+  /* legacy names used by the captured brand block */
+  --signature-purple: var(--color-deep);
+  --signature-violet: var(--color-violet);
+  --signature-platinum: var(--color-platinum);
+  --signature-black: var(--color-night);
+  --signature-accent: var(--color-accent);
+
+  /* type */
+  --font-serif: Cinzel, Georgia, serif;
+  --font-sans: Montserrat, Arial, sans-serif;
+
+  /* layout */
+  --container-width: 1320px;
+  --gutter: clamp(20px, 4.5vw, 72px);
+  --nav-height: 94px;
+  --nav-height-mobile: 78px;
+
+  /* breakpoints (documented; media queries cannot read custom properties) */
+  --bp-nav: 1150px;
+  --bp-tablet: 1024px;
+  --bp-stack: 900px;
+  --bp-mobile: 767px;
+  --bp-phone: 600px;
+}

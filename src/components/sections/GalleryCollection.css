@@ -1,0 +1,69 @@
+/* Ported from the gallery page's native Elementor grid rules (#page-content / #collection). */
+.gallery-page-content {
+  padding: 0 0 72px;
+  background: #09080d;
+}
+
+.gallery-collection {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 22px;
+  width: calc(100% - var(--gutter) * 2);
+  max-width: var(--container-width);
+  margin: auto;
+  scroll-margin-top: 110px;
+}
+
+.gallery-collection figure {
+  grid-column: span 2;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-collection figure:nth-child(-n + 2) {
+  grid-column: span 3;
+  aspect-ratio: 3 / 2;
+}
+
+.gallery-collection img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-collection figure:hover img {
+  transform: scale(1.035);
+}
+
+@media (max-width: 1024px) {
+  .gallery-collection {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-collection figure,
+  .gallery-collection figure:nth-child(-n + 2) {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-collection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-collection img {
+    transition: none;
+  }
+
+  .gallery-collection figure:hover img {
+    transform: none;
+  }
+}

@@ -1,0 +1,5 @@
+/* Ported from the global header widget (inner pages): dropdown needs the wrapper to be visible/positioned. */
+.scl-home--header{overflow:visible;position:relative;z-index:100}
+.scl-home--header .site-nav{position:relative;}
+.scl-home--header .navinner{height:94px}
+@media(max-width:900px){.scl-home--header .navinner{height:78px}}
