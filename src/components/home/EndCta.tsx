@@ -3,24 +3,26 @@ import { ArrowIcon } from '../common/Icons'
 import { Reveal } from '../common/Reveal'
 import { IMAGES } from '../../lib/assets'
 import { ROUTES } from '../../data/site'
+import { useI18n } from '../../i18n'
 
 export function EndCta() {
+  const { t } = useI18n()
   return (
     <section className="end" id="contact">
-      <img src={IMAGES.end} alt="Luxury supercar in dramatic dark studio" />
+      <img src={IMAGES.end} alt={t('Luxury supercar in dramatic dark studio')} />
       <div className="container">
-        <Reveal className="kicker intro-label">Your next chapter begins here</Reveal>
+        <Reveal className="kicker intro-label">{t('Your next chapter begins here')}</Reveal>
         <Reveal as="h2" className="serif">
-          Your car.
+          {t('Your car.')}
           <br />
-          Your vision.
+          {t('Your vision.')}
           <br />
-          <em>Our signature.</em>
+          <em>{t('Our signature.')}</em>
         </Reveal>
-        <Reveal as="p">Exceptional cars deserve extraordinary attention.</Reveal>
+        <Reveal as="p">{t('Exceptional cars deserve extraordinary attention.')}</Reveal>
         <Reveal className="hero-buttons">
           <Link className="cta" to={ROUTES.booking}>
-            Plan your consultation <ArrowIcon />
+            {t('Plan your consultation')} <ArrowIcon />
           </Link>
         </Reveal>
       </div>

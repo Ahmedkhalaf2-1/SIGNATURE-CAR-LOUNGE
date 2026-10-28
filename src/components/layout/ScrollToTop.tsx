@@ -13,7 +13,8 @@ export function ScrollToTop() {
         return
       }
     }
-    window.scrollTo(0, 0)
+    // `instant` beats the page-wide `scroll-behavior: smooth`, so a new route opens at the top instead of gliding there.
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [pathname, hash])
 
   return null

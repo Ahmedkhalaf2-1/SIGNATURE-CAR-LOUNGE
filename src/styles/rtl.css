@@ -1,0 +1,232 @@
+/* Arabic (ar-SA) typography + right-to-left adjustments. English (ltr) is untouched by anything in this file. */
+
+/* Typography: Arabic joins letters, so letter-spacing and forced case must be off; Latin glyphs fall back to Montserrat. */
+html[lang='ar-SA'] body .scl-app,
+html[lang='ar-SA'] body .scl-app * {
+  font-family: 'IBM Plex Sans Arabic', Montserrat, Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-style: normal !important;
+}
+
+/* Arabic glyphs read smaller than Latin at the same size: lift the tiny captured label sizes and open up line height. */
+html[lang='ar-SA'] body .scl-app :is(.links > a, .scl-services-menu summary, .scl-submenu a) {
+  font-size: 13px !important;
+}
+html[lang='ar-SA'] body .scl-app :is(.cta, .scl-page-cta, .info-button, .ct-button, .fq-button, .closebox) {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+html[lang='ar-SA'] body .scl-app :is(.kicker, .intro-label, .scl-page-kicker, .ct-label, .fq-label, .info-label, .scl-page-meta, .scl-hero-note, .hero-foot, .hero-side, .marquee span, .picture-note, .svc-index, .shot span, .benefit span, .vert, .image-disclaimer, .footer h4, .copyright, small, b, figcaption, .underline-link) {
+  font-size: 12px !important;
+}
+html[lang='ar-SA'] body .scl-app :is(p, li, summary, .desc, .scl-page-copy) {
+  line-height: 1.9 !important;
+}
+html[lang='ar-SA'] body .scl-app :is(h1, h2, h3, h4) {
+  line-height: 1.3 !important;
+}
+html[lang='ar-SA'] body .scl-app .site-nav .logotext small {
+  font-size: 11px !important;
+}
+
+/* ---- Language switch (both languages) ---- */
+.scl-app .lang-switch {
+  min-width: 40px;
+  padding: 8px 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #ffffff55;
+  font: 700 10px/1 Montserrat, Arial, sans-serif;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.scl-app .lang-switch:hover,
+.scl-app .lang-switch:focus-visible {
+  background: #5c248366;
+  border-color: #bc91e8;
+}
+html[lang='ar-SA'] body .scl-app .lang-switch {
+  font-family: Montserrat, Arial, sans-serif !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+}
+@media (max-width: 1150px) {
+  .scl-app .lang-switch {
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
+
+/* ---- Right-to-left layout ---- */
+/* Flex/grid rows reverse on their own; what follows fixes physically positioned or directional pieces.
+   Photography and image compositions are deliberately left unmirrored. */
+
+/* Directional arrows and glyphs */
+html[dir='rtl'] .scl-app :is(.cta, .round-arr, .underline-link, .benefit, .shot span, .scl-page-cta, .info-button, .ct-button, .fq-button) svg,
+html[dir='rtl'] .scl-app .dir-arrow {
+  transform: scaleX(-1);
+}
+html[dir='rtl'] .scl-app .dir-arrow:not(.ct-icon) {
+  display: inline-block; /* transforms need a box; .ct-icon is already a grid item */
+}
+
+/* Gradient scrims: the dark side must sit behind the (now right-aligned) copy. Pseudo-elements hold gradients only. */
+html[dir='rtl'] .scl-home .hero:before,
+html[dir='rtl'] .scl-home .end:before {
+  transform: scaleX(-1);
+}
+html[dir='rtl'] .scl-home .experience:before {
+  background: linear-gradient(270deg, #09070ef2, #09070eb0 55%, #09070e44), url('/assets/images/814e2e85-6807-48c1-961e-71ea36e7b1f8-1.webp') center/cover;
+}
+
+/* Marquee loops towards the end of the line it starts from */
+@keyframes marquee-rtl {
+  to {
+    transform: translateX(50%);
+  }
+}
+html[dir='rtl'] .scl-home .marquee-track {
+  animation-name: marquee-rtl;
+}
+
+/* Home: cards, timeline, gallery chips, lightbox */
+html[dir='rtl'] .scl-home .svc-index {
+  left: auto;
+  right: 30px;
+}
+html[dir='rtl'] .scl-home .svc-info {
+  left: 80px;
+  right: 35px;
+}
+html[dir='rtl'] .scl-home .round-arr {
+  right: auto;
+  left: 35px;
+}
+html[dir='rtl'] .scl-home .timeline > div:before {
+  left: auto;
+  right: 0;
+}
+html[dir='rtl'] .scl-home .shot {
+  text-align: right;
+}
+html[dir='rtl'] .scl-home .shot span {
+  left: auto;
+  right: 20px;
+}
+html[dir='rtl'] .scl-home .closebox {
+  right: auto;
+  left: 35px;
+}
+html[dir='rtl'] .scl-home .hero-side {
+  right: auto;
+  left: 2vw;
+}
+html[dir='rtl'] .scl-home .scl-submenu {
+  left: auto;
+  right: -20px;
+}
+html[dir='rtl'] .scl-home .cta {
+  text-align: right;
+}
+@media (max-width: 600px) {
+  html[dir='rtl'] .scl-home .timeline {
+    border-left: 0;
+    border-right: 1px solid #cab4d77d;
+    padding-left: 0;
+    padding-right: 20px;
+  }
+  html[dir='rtl'] .scl-home .timeline > div:before {
+    left: auto;
+    right: -26px;
+  }
+  html[dir='rtl'] .scl-home .round-arr {
+    right: auto;
+    left: 24px;
+  }
+  html[dir='rtl'] .scl-home .svc-info {
+    left: 78px;
+    right: 25px;
+  }
+  html[dir='rtl'] .scl-home .svc-index {
+    left: auto;
+    right: 16px;
+  }
+  html[dir='rtl'] .scl-home .shot span {
+    left: auto;
+    right: 12px;
+  }
+}
+
+/* Inner pages. IDs in the captured selectors win on specificity, hence !important. */
+html[dir='rtl'] [class^='pg-'] .detail-gallery .scl-page-split > div:first-child {
+  padding-right: 0 !important;
+  padding-left: 260px !important;
+}
+html[dir='rtl'] [class^='pg-'] .detail-gallery .scl-page-cta {
+  right: auto !important;
+  left: 0 !important;
+}
+@media (max-width: 900px) {
+  html[dir='rtl'] [class^='pg-'] .detail-gallery .scl-page-split > div:first-child {
+    padding-left: 0 !important;
+  }
+}
+html[dir='rtl'] .pg-experience .scl-craft-timeline {
+  border-left: 0 !important;
+  border-right: 1px solid #987ba566 !important;
+  padding-left: 0 !important;
+  padding-right: 28px !important;
+}
+html[dir='rtl'] .pg-experience .scl-craft-timeline article:before {
+  left: auto !important;
+  right: -34px !important;
+}
+html[dir='rtl'] .pg-faq #signature-faq details .scl-page-copy {
+  padding-right: 0;
+  padding-left: 15px;
+}
+html[dir='rtl'] :is(.pg-privacy, .pg-terms) .info-note {
+  border-left: 0 !important;
+  border-right: 2px solid #ad85c6 !important;
+}
+html[dir='rtl'] .pg-services #scl-services-page .service-image > span {
+  left: auto;
+  right: 18px;
+}
+html[dir='rtl'] :is(.pg-contact .ct-hero, .pg-faq .fq-hero) {
+  background-image: radial-gradient(ellipse at top left, #39234355, transparent 65%) !important;
+}
+html[dir='rtl'] .pg-about .scl-about .scl-page-finale {
+  background: linear-gradient(270deg, #08070bea, #120c1bc9), url('/assets/images/26b659a1-2a3d-40db-a7f7-762ebf160670-1.webp') center/cover;
+}
+html[dir='rtl'] .pg-services #scl-services-page .scl-page-finale {
+  background: linear-gradient(270deg, #130d1bf5, #130d1bc7), url('/assets/images/fbb4cb03-08c1-45f4-9e93-3bcdcad22fbd-1.webp') center/cover;
+}
+
+/* Booking form: email/phone content is left-to-right even on an Arabic page; the select chevron moves to the start side. */
+html[dir='rtl'] .booking-form input[type='email'],
+html[dir='rtl'] .booking-form input[type='tel'] {
+  direction: ltr;
+  text-align: right;
+}
+html[dir='rtl'] .booking-form select {
+  padding-right: 14px;
+  padding-left: 40px;
+}
+html[dir='rtl'] .booking-form__select svg {
+  right: auto;
+  left: 14px;
+}
+
+/* Booking form: larger Arabic text */
+html[lang='ar-SA'] body .scl-app .booking-form label {
+  font-size: 14px !important;
+}
+html[lang='ar-SA'] body .scl-app :is(.booking-form input, .booking-form select, .booking-form textarea, .booking-form__status) {
+  font-size: 15px !important;
+}
+html[lang='ar-SA'] body .scl-app .booking-form button[type='submit'] {
+  font-size: 15px !important;
+}

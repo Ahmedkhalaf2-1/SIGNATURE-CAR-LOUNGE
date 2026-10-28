@@ -1,0 +1,16 @@
+# Copy to /etc/caddy/Caddyfile on the VPS, then: sudo systemctl reload caddy
+# Frontend: upload the output of `npm run build:client` (./dist) to /var/www/signaturecarslounge/dist
+# API: Express under PM2 on 127.0.0.1:3001 (see ecosystem.config.cjs)
+signaturecarslounge.com, www.signaturecarslounge.com {
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy 127.0.0.1:3001
+	}
+
+	handle {
+		root * /var/www/signaturecarslounge/dist
+		try_files {path} /index.html
+		file_server
+	}
+}

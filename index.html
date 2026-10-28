@@ -9,6 +9,15 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Apply the saved language before first paint so Arabic visitors do not see an LTR flash.
+      try {
+        if (localStorage.getItem('scl-locale') === 'ar-SA') {
+          document.documentElement.lang = 'ar-SA'
+          document.documentElement.dir = 'rtl'
+        }
+      } catch (e) {}
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

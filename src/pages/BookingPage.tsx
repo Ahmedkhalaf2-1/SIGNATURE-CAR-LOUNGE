@@ -5,31 +5,33 @@ import { PageArrowIcon } from '../components/common/Icons'
 import { BookingForm } from '../components/forms/BookingForm'
 import { NativeFinale } from '../components/sections/NativeFinale'
 import { ROUTES } from '../data/site'
+import { useI18n } from '../i18n'
 import '../styles/pages/booking.css'
 
 function PageHero() {
+  const { t } = useI18n()
   return (
     <section className="scl-page-hero">
       <div className="scl-page-wrap scl-page-split">
         <div>
-          <div className="scl-page-kicker">YOUR CONSULTATION</div>
+          <div className="scl-page-kicker">{t('YOUR CONSULTATION')}</div>
           <h1>
-            Every signature
+            {t('Every signature')}
             <br />
-            starts with <em>you.</em>
+            {t('starts with')} <em>{t('you.')}</em>
           </h1>
           <div className="scl-page-copy">
-            <p>Plan the care you have in mind with a guided consultation request.</p>
+            <p>{t('Plan the care you have in mind with a guided consultation request.')}</p>
           </div>
           <Link to="/signature-booking/#booking-form" className="scl-page-cta">
-            Start your request
+            {t('Start your request')}
             <PageArrowIcon />
           </Link>
-          <div className="scl-page-kicker">A conversation built around your car.</div>
+          <div className="scl-page-kicker">{t('A conversation built around your car.')}</div>
         </div>
         <figure>
-          <img src={img('hero-banner.jpg')} alt="Signature luxury automotive craftsmanship" />
-          <figcaption className="scl-page-meta">FORM. FINISH. FEELING. / SIGNATURE CAR LOUNGE</figcaption>
+          <img src={img('hero-banner.jpg')} alt={t('Signature luxury automotive craftsmanship')} />
+          <figcaption className="scl-page-meta">{t('FORM. FINISH. FEELING. / SIGNATURE CAR LOUNGE')}</figcaption>
         </figure>
       </div>
     </section>
@@ -37,9 +39,10 @@ function PageHero() {
 }
 
 export default function BookingPage() {
+  const { t } = useI18n()
   return (
     <div className="pg-booking">
-      <Seo title="Book a Consultation – Signature Car Lounge" />
+      <Seo title={t('Book a Consultation – Signature Car Lounge')} />
       <main className="scl-interior">
         <PageHero />
       </main>

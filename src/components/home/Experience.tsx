@@ -1,4 +1,5 @@
 import { Reveal } from '../common/Reveal'
+import { useI18n } from '../../i18n'
 
 const STEPS = [
   { label: '01 / UNDERSTAND', title: 'Listen closely.', body: 'We begin with your vehicle, the smallest details and the finish you envision.' },
@@ -7,21 +8,22 @@ const STEPS = [
 ]
 
 export function Experience() {
+  const { t } = useI18n()
   return (
     <section className="experience" id="experience">
       <div className="container">
-        <Reveal className="kicker intro-label">03 / The Signature Experience</Reveal>
+        <Reveal className="kicker intro-label">{t('03 / The Signature Experience')}</Reveal>
         <Reveal as="h2" className="serif">
-          Beyond the finish.
+          {t('Beyond the finish.')}
           <br />
-          <em>Into the feeling.</em>
+          <em>{t('Into the feeling.')}</em>
         </Reveal>
         <Reveal className="timeline">
           {STEPS.map((s) => (
             <div key={s.label}>
-              <b>{s.label}</b>
-              <h3>{s.title}</h3>
-              <p>{s.body}</p>
+              <b>{t(s.label)}</b>
+              <h3>{t(s.title)}</h3>
+              <p>{t(s.body)}</p>
             </div>
           ))}
         </Reveal>

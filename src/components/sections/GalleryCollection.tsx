@@ -1,5 +1,6 @@
 import { img } from '../../lib/assets'
 import './GalleryCollection.css'
+import { useI18n } from '../../i18n'
 
 const SHOTS = [
   { file: 'mercedes.jpg', alt: 'Sculpted lines — illustrative vehicle photography' },
@@ -14,12 +15,13 @@ const SHOTS = [
 
 /** The gallery page's image collection: two wide tiles followed by a three-up grid. */
 export function GalleryCollection() {
+  const { t } = useI18n()
   return (
     <div className="gallery-page-content" id="page-content">
       <div className="gallery-collection" id="collection">
         {SHOTS.map((s) => (
           <figure key={s.file}>
-            <img src={img(s.file)} alt={s.alt} loading="lazy" />
+            <img src={img(s.file)} alt={t(s.alt)} loading="lazy" />
           </figure>
         ))}
       </div>
