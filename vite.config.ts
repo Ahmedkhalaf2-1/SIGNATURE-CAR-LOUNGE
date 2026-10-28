@@ -7,6 +7,8 @@ const api = { '/api': { target: 'http://127.0.0.1:3001', changeOrigin: true } }
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // No public source maps in production builds.
+  build: { sourcemap: false },
   server: { port: 5173, proxy: api },
   preview: { proxy: api },
 })

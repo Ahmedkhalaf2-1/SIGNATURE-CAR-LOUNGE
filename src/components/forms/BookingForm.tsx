@@ -6,6 +6,8 @@ import { DatePicker } from './DatePicker'
 import { parseISODate, toISODate } from './dateUtils'
 import './BookingForm.css'
 
+const FIELDS = ['name', 'email', 'phone', 'vehicle', 'service', 'preferred_date', 'message', 'website'] as const
+
 const DEFAULT_SERVICE = SERVICES[0].option
 
 /** Maps ?service=ppf (etc.) to the matching <option> label; unknown values fall back to the first option. */
@@ -37,7 +39,10 @@ export function BookingForm() {
     e.preventDefault()
     if (state.phase === 'submitting') return
     const form = e.currentTarget
-    const data = Object.fromEntries(new FormData(form)) as Record<string, string>
+    const fd = new FormData(form)
+    // Only the expected fields are sent; anything else in the form is ignored.
+    const data: Record<string, string> = {}
+    for (const key of FIELDS) data[key] = String(fd.get(key) ?? '')
     for (const key of ['name', 'email', 'phone', 'vehicle'] as const) {
       if (!data[key]?.trim()) {
         setState({ phase: 'error', message: t('Please complete all required fields.') })
