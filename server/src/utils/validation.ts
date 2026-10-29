@@ -11,15 +11,15 @@ interface FieldRule {
 }
 
 // Practical ASCII email grammar: no whitespace, quotes, angle brackets or control characters.
-const EMAIL_RE =
+export const EMAIL_RE =
   /^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+$/
 // Digits (Latin, Arabic-Indic, Persian) plus the separators real numbers use: + ( ) - . / spaces, and dial extras # * , ;
-const PHONE_RE = /^[0-9٠-٩۰-۹ ()+\-./#*,;]+$/
-const DIGIT_RE = /[0-9\u0660-\u0669\u06F0-\u06F9]/g
+export const PHONE_RE = /^[0-9٠-٩۰-۹ ()+\-./#*,;]+$/
+export const DIGIT_RE = /[0-9\u0660-\u0669\u06F0-\u06F9]/g
 const DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/
 // Control characters except TAB/LF/CR, plus the Unicode line/paragraph separators (U+2028, U+2029).
-const BAD_CHARS_RE = new RegExp(`[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F${String.fromCharCode(0x2028, 0x2029)}]`)
-const LINE_BREAK_RE = /[\r\n\t]/
+export const BAD_CHARS_RE = new RegExp(`[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F${String.fromCharCode(0x2028, 0x2029)}]`)
+export const LINE_BREAK_RE = /[\r\n\t]/
 
 /** Exactly the booking form's service <option> values (src/data/site.ts SERVICES[].option). */
 export const ALLOWED_SERVICES: ReadonlySet<string> = new Set([

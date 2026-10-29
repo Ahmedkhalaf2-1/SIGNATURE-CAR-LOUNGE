@@ -1,5 +1,6 @@
 import { Resend } from 'resend'
 import { FIELDS, type FormKind, type FormValues } from '../utils/validation.js'
+import type { CarInquiry } from '../utils/carInquiry.js'
 
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;')
@@ -43,5 +44,42 @@ export async function sendFormEmail(kind: FormKind, values: FormValues): Promise
     text,
   })
   // Keep only Resend's error category; its free-text message is never logged or returned.
+  if (error) throw new EmailError(`Resend rejected the email: ${String(error.name)}`)
+}
+
+export async function sendCarInquiryEmail(q: CarInquiry): Promise<void> {
+  // Fixed server-side subject built from the trusted vehicle name only.
+  const subject = `Vehicle Inquiry — ${q.car}`
+  const rows = [
+    ['Vehicle', q.car],
+    ['Customer', q.name],
+    ['Email', q.email],
+    ['Phone', q.phone],
+    ['Message', q.message],
+  ]
+  const html =
+    `<h2>New Vehicle Inquiry</h2><table cellpadding="6" style="border-collapse:collapse">` +
+    rows
+      .map(([l, v]) => `<tr><td style="vertical-align:top"><strong>${escapeHtml(l)}</strong></td><td style="white-space:pre-wrap">${escapeHtml(v)}</td></tr>`)
+      .join('') +
+    '</table>'
+  const text = 'New Vehicle Inquiry\n\n' + rows.map(([l, v]) => `${l}:\n${v}`).join('\n\n')
+
+  if (process.env.EMAIL_DRY_RUN === '1') {
+    console.log('[car-inquiry] dry run: email not sent')
+    return
+  }
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) throw new EmailError('RESEND_API_KEY is not configured')
+  client ??= new Resend(apiKey)
+
+  const { error } = await client.emails.send({
+    from: process.env.EMAIL_FROM || 'Signature Car Lounge Website <website@signaturecarslounge.com>',
+    to: process.env.CAR_INQUIRY_RECIPIENT || 'info@signaturecarlounge.com',
+    replyTo: q.email,
+    subject,
+    html,
+    text,
+  })
   if (error) throw new EmailError(`Resend rejected the email: ${String(error.name)}`)
 }
