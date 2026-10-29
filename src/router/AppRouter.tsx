@@ -13,6 +13,8 @@ const CeramicCoatingPage = lazy(() => import('../pages/CeramicCoatingPage'))
 const BodyKitsPage = lazy(() => import('../pages/BodyKitsPage'))
 const RestorationPage = lazy(() => import('../pages/RestorationPage'))
 const AutomotiveSpaPage = lazy(() => import('../pages/AutomotiveSpaPage'))
+const CarsForSalePage = lazy(() => import('../pages/CarsForSalePage'))
+const CarDetailPage = lazy(() => import('../pages/CarDetailPage'))
 const ExperiencePage = lazy(() => import('../pages/ExperiencePage'))
 const GalleryPage = lazy(() => import('../pages/GalleryPage'))
 const FAQPage = lazy(() => import('../pages/FAQPage'))
@@ -38,6 +40,8 @@ export function AppRouter() {
                 const Page = SERVICE_PAGES[i]
                 return <Route key={s.key} path={s.path} element={<Page />} />
               })}
+              <Route path={ROUTES.cars} element={<CarsForSalePage />} />
+              <Route path={`${ROUTES.cars}/:slug`} element={<CarDetailPage />} />
               <Route path={ROUTES.experience} element={<ExperiencePage />} />
               <Route path={ROUTES.gallery} element={<GalleryPage />} />
               <Route path={ROUTES.faq} element={<FAQPage />} />

@@ -8,6 +8,7 @@ import { useI18n } from '../../i18n'
 const EXPLORE = [
   { to: ROUTES.about, label: 'About Us' },
   { to: ROUTES.services, label: 'Our Services' },
+  { to: ROUTES.cars, label: 'Cars for Sale' },
   { to: ROUTES.experience, label: 'The Experience' },
   { to: ROUTES.gallery, label: 'Gallery' },
   { to: ROUTES.faq, label: 'FAQs' },

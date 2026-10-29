@@ -30,33 +30,14 @@ html[lang='ar-SA'] body .scl-app .site-nav .logotext small {
   font-size: 11px !important;
 }
 
-/* ---- Language switch (both languages) ---- */
-.scl-app .lang-switch {
-  min-width: 40px;
-  padding: 8px 10px;
-  background: transparent;
-  color: #fff;
-  border: 1px solid #ffffff55;
-  font: 700 10px/1 Montserrat, Arial, sans-serif;
-  letter-spacing: 0.14em;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-.scl-app .lang-switch:hover,
-.scl-app .lang-switch:focus-visible {
-  background: #5c248366;
-  border-color: #bc91e8;
-}
-html[lang='ar-SA'] body .scl-app .lang-switch {
-  font-family: Montserrat, Arial, sans-serif !important;
-  font-size: 11px !important;
-  letter-spacing: 0.1em !important;
-}
+/* ---- Language switch (both languages): globe + code, divided from the nav CTA ---- */
+.scl-app .lang-switch{display:inline-flex;align-items:center;gap:8px;padding:6px 2px 6px 18px;background:transparent;color:#fff;border:0;border-inline-start:1px solid #ffffff33;border-radius:0;font:700 11px/1 Montserrat,Arial,sans-serif;letter-spacing:.14em;cursor:pointer;transition:color .2s}
+.scl-app .lang-switch svg{color:#bc91e8;transition:transform .3s}
+.scl-app .lang-switch:hover,.scl-app .lang-switch:focus-visible{background:transparent;color:#d9bdf2}
+.scl-app .lang-switch:hover svg{transform:rotate(20deg)}
+html[lang='ar-SA'] body .scl-app .lang-switch{font-family:Montserrat,Arial,sans-serif!important;font-size:12px!important;letter-spacing:.1em!important}
 @media (max-width: 1150px) {
-  .scl-app .lang-switch {
-    align-self: flex-start;
-    margin-top: 16px;
-  }
+  .scl-app .lang-switch{align-self:flex-start;margin-top:16px;padding:8px 0;border-inline-start:0}
 }
 
 /* ---- Right-to-left layout ---- */

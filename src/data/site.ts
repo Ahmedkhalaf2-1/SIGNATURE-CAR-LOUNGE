@@ -22,6 +22,7 @@ export const ROUTES = {
   home: '/',
   about: '/signature-about/',
   services: '/signature-services/',
+  cars: '/cars-for-sale',
   experience: '/signature-experience/',
   gallery: '/signature-gallery/',
   faq: '/signature-faq/',
@@ -40,3 +41,4 @@ export const HOME_SERVICE_CARDS = [
   { ...SERVICES[4], title: 'Restoration', tagline: 'Timeless character, renewed.', image: IMAGES.restoration, alt: 'Restoration automotive service' },
   { ...SERVICES[5], title: 'Automotive spa', tagline: 'Beautiful inside and out.', image: IMAGES.spa, alt: 'Automotive spa automotive service' },
 ]
+

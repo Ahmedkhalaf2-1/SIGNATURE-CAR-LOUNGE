@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useI18n } from '../../i18n'
-import { MenuIcon } from '../common/Icons'
+import { GlobeIcon, MenuIcon } from '../common/Icons'
 import { IMAGES } from '../../lib/assets'
 import { ROUTES, SERVICES } from '../../data/site'
 
@@ -11,6 +11,7 @@ const PLAIN_LINKS_BEFORE = [
 ] as const
 
 const PLAIN_LINKS_AFTER = [
+  { to: ROUTES.cars, label: 'Cars for Sale' },
   { to: ROUTES.experience, label: 'Experience' },
   { to: ROUTES.gallery, label: 'Gallery' },
   { to: ROUTES.faq, label: 'FAQs' },
@@ -95,7 +96,8 @@ export function Header() {
             aria-label={locale === 'en' ? t('Switch language to Arabic') : t('Switch language to English')}
             onClick={() => setLocale(locale === 'en' ? 'ar-SA' : 'en')}
           >
-            {locale === 'en' ? 'AR' : 'EN'}
+            <GlobeIcon />
+            <span>{locale === 'en' ? 'AR' : 'EN'}</span>
           </button>
         </nav>
         <button className="hamb" type="button" aria-label={t('Toggle navigation')} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
