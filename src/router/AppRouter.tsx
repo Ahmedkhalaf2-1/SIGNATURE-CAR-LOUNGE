@@ -17,6 +17,7 @@ const CarsForSalePage = lazy(() => import('../pages/CarsForSalePage'))
 const CarDetailPage = lazy(() => import('../pages/CarDetailPage'))
 const VisualizerPage = lazy(() => import('../pages/VisualizerPage'))
 const DigitalCardPage = lazy(() => import('../pages/DigitalCardPage'))
+const FaisalCardPage = lazy(() => import('../pages/DigitalCardPage').then((m) => ({ default: m.FaisalCardPage })))
 const ExperiencePage = lazy(() => import('../pages/ExperiencePage'))
 const GalleryPage = lazy(() => import('../pages/GalleryPage'))
 const FAQPage = lazy(() => import('../pages/FAQPage'))
@@ -37,6 +38,7 @@ export function AppRouter() {
             <Route index element={<HomePage />} />
             {/* Standalone digital business card: no header/footer and not linked from any menu. */}
             <Route path="/connect/rayan" element={<DigitalCardPage />} />
+            <Route path="/connect/faisal" element={<FaisalCardPage />} />
             <Route element={<InnerLayout />}>
               <Route path={ROUTES.about} element={<AboutPage />} />
               <Route path={ROUTES.services} element={<ServicesPage />} />

@@ -11,27 +11,41 @@ import '../styles/pages/digital-card.css'
  */
 export const DIGITAL_CARD_PATH = '/connect/rayan'
 
-const CONTACT: VCardContact = {
-  givenName: 'Rayan SalahAldeen',
-  familyName: 'Al Bakri',
-  fullName: 'Rayan SalahAldeen Al Bakri',
-  organization: 'Signature Car Lounge',
-  title: 'Owner',
-  phone: '+966566885580',
-  email: 'Info@signaturecarslounge.com',
-  url: 'https://signaturecarslounge.com',
+interface CardPerson {
+  /** URL path, e.g. /connect/rayan: also what the QR code points at. */
+  path: string
+  contact: VCardContact
+  phoneDisplay: string
+  vcfName: string
 }
 
-export default function DigitalCardPage() {
+const COMPANY = { organization: 'Signature Car Lounge', email: 'Info@signaturecarslounge.com', url: 'https://signaturecarslounge.com' }
+
+const RAYAN: CardPerson = {
+  path: DIGITAL_CARD_PATH,
+  phoneDisplay: '+966 50 432 8778',
+  vcfName: 'Rayan-Al-Bakri.vcf',
+  contact: { givenName: 'Rayan SalahAldeen', familyName: 'Al Bakri', fullName: 'Rayan SalahAldeen Al Bakri', title: 'Owner', phone: '+966504328778', ...COMPANY },
+}
+
+const FAISAL: CardPerson = {
+  path: '/connect/faisal',
+  phoneDisplay: '+966 56 622 2312',
+  vcfName: 'Faisal-Albelushi.vcf',
+  contact: { givenName: 'Faisal Adel', familyName: 'Albelushi', fullName: 'Faisal Adel Albelushi', title: 'Owner / Partner', phone: '+966566222312', ...COMPANY },
+}
+
+function DigitalCard({ person }: { person: CardPerson }) {
+  const { contact: CONTACT, path, phoneDisplay, vcfName } = person
   const [saved, setSaved] = useState(false)
   const timer = useRef<number>(0)
   // The QR points at this very page, built from the live origin so it is right on any host.
-  const [cardUrl] = useState(() => `${window.location.origin}${DIGITAL_CARD_PATH}`)
+  const [cardUrl] = useState(() => `${window.location.origin}${path}`)
 
   useEffect(() => () => window.clearTimeout(timer.current), [])
 
   const save = () => {
-    downloadVCard(CONTACT, 'Rayan-Al-Bakri.vcf')
+    downloadVCard(CONTACT, vcfName)
     setSaved(true)
     window.clearTimeout(timer.current)
     timer.current = window.setTimeout(() => setSaved(false), 3200)
@@ -58,14 +72,14 @@ export default function DigitalCardPage() {
 
         <section className="card__body">
           <h1 className="card__name">{CONTACT.fullName}</h1>
-          <p className="card__role">Owner</p>
+          <p className="card__role">{CONTACT.title}</p>
           <span className="card__rule" aria-hidden="true" />
 
           <ul className="card__contacts">
             <li>
               <a className="contact" href={`tel:${CONTACT.phone}`}>
                 <PhoneIcon size={24} />
-                <span>+966 56 688 5580</span>
+                <span>{phoneDisplay}</span>
               </a>
             </li>
             <li>
@@ -99,4 +113,12 @@ export default function DigitalCardPage() {
       </main>
     </div>
   )
+}
+
+export default function DigitalCardPage() {
+  return <DigitalCard person={RAYAN} />
+}
+
+export function FaisalCardPage() {
+  return <DigitalCard person={FAISAL} />
 }
