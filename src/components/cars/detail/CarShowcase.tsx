@@ -4,6 +4,7 @@ import { carAlt, type CarListing } from '../../../data/cars'
 import { ROUTES } from '../../../data/site'
 import { useI18n } from '../../../i18n'
 import { useCarFormat } from '../useCarFormat'
+import { DirArrow } from '../../common/Icons'
 
 /**
  * Full-bleed hero whose photo is the gallery stage, with the thumbnail rail directly beneath it.
@@ -63,11 +64,11 @@ export function CarShowcase({ car }: { car: CarListing }) {
           <div className="cd-statusbox">
             <span className="cd-statusbox__label">{boxLabel}</span>
             <a className="cd-statusbox__cta" href="#enquire">
-              {t('Enquire About This Vehicle')} <span className="dir-arrow" aria-hidden="true">→</span>
+              {t('Enquire About This Vehicle')} <DirArrow dir="e" />
             </a>
           </div>
           <Link className="cd-back" to={ROUTES.cars}>
-            <span className="dir-arrow" aria-hidden="true">←</span> {t('Back to Cars for Sale')}
+            <DirArrow dir="w" /> {t('Back to Cars for Sale')}
           </Link>
         </div>
       </header>
@@ -76,7 +77,11 @@ export function CarShowcase({ car }: { car: CarListing }) {
         <section className="cd-rail-wrap" aria-label={t('Gallery')}>
           <div className="cd-wrap cd-rail">
             <button type="button" className="cd-rail__nav" aria-label={t('Previous image')} onClick={() => go(active - 1)}>
-              <span className="dir-arrow" aria-hidden="true">‹</span>
+              <span className="dir-arrow cd-rail__chev" aria-hidden="true">
+                <svg className="brand-icon" width="22" height="22" viewBox="0 0 24 24" focusable="false">
+                  <path d="m15 5-7 7 7 7" />
+                </svg>
+              </span>
             </button>
             <div className="cd-rail__track" role="group" aria-label={t('Choose image')} ref={rail} onKeyDown={onKey}>
               {images.map((src, i) => (
@@ -94,7 +99,11 @@ export function CarShowcase({ car }: { car: CarListing }) {
               ))}
             </div>
             <button type="button" className="cd-rail__nav" aria-label={t('Next image')} onClick={() => go(active + 1)}>
-              <span className="dir-arrow" aria-hidden="true">›</span>
+              <span className="dir-arrow cd-rail__chev" aria-hidden="true">
+                <svg className="brand-icon" width="22" height="22" viewBox="0 0 24 24" focusable="false">
+                  <path d="m9 5 7 7-7 7" />
+                </svg>
+              </span>
             </button>
           </div>
         </section>

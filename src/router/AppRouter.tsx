@@ -15,6 +15,8 @@ const RestorationPage = lazy(() => import('../pages/RestorationPage'))
 const AutomotiveSpaPage = lazy(() => import('../pages/AutomotiveSpaPage'))
 const CarsForSalePage = lazy(() => import('../pages/CarsForSalePage'))
 const CarDetailPage = lazy(() => import('../pages/CarDetailPage'))
+const VisualizerPage = lazy(() => import('../pages/VisualizerPage'))
+const DigitalCardPage = lazy(() => import('../pages/DigitalCardPage'))
 const ExperiencePage = lazy(() => import('../pages/ExperiencePage'))
 const GalleryPage = lazy(() => import('../pages/GalleryPage'))
 const FAQPage = lazy(() => import('../pages/FAQPage'))
@@ -33,6 +35,8 @@ export function AppRouter() {
         <Routes>
           <Route element={<RootLayout />}>
             <Route index element={<HomePage />} />
+            {/* Standalone digital business card: no header/footer and not linked from any menu. */}
+            <Route path="/connect/rayan" element={<DigitalCardPage />} />
             <Route element={<InnerLayout />}>
               <Route path={ROUTES.about} element={<AboutPage />} />
               <Route path={ROUTES.services} element={<ServicesPage />} />
@@ -42,6 +46,7 @@ export function AppRouter() {
               })}
               <Route path={ROUTES.cars} element={<CarsForSalePage />} />
               <Route path={`${ROUTES.cars}/:slug`} element={<CarDetailPage />} />
+              <Route path={ROUTES.visualizer} element={<VisualizerPage />} />
               <Route path={ROUTES.experience} element={<ExperiencePage />} />
               <Route path={ROUTES.gallery} element={<GalleryPage />} />
               <Route path={ROUTES.faq} element={<FAQPage />} />

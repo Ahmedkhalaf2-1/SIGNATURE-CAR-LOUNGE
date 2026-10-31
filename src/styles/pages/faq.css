@@ -1,47 +1,47 @@
 /* Ported from 12-signature-faq-faqs-signature-car-lounge inline CSS; WordPress wrapper rules dropped; scoped to .pg-faq. */
-.pg-faq #signature-faq{background:#0B0914;color:#f4f0f6;font-family:Montserrat,Arial,sans-serif;width:100%;overflow:hidden}
+.pg-faq #signature-faq{background:var(--brand-obsidian);color:var(--text-strong);font-family:var(--font-sans);width:100%;overflow:hidden}
 .pg-faq #signature-faq *{box-sizing:border-box}
 .pg-faq #signature-faq .fq-wrap{width:calc(100% - 2 * clamp(20px,4.5vw,72px));max-width:1320px;margin:0 auto}
 .pg-faq #signature-faq section{padding:72px 0}
-.pg-faq #signature-faq h1,.pg-faq #signature-faq h2,.pg-faq #signature-faq h3{font-family:Cinzel,Georgia,serif;font-weight:400;color:#f4f0f6;letter-spacing:-.045em;line-height:1.1;margin:18px 0 24px}
+.pg-faq #signature-faq h1,.pg-faq #signature-faq h2,.pg-faq #signature-faq h3{font-family:var(--font-serif);font-weight:400;color:var(--text-strong);letter-spacing:-.045em;line-height:1.1;margin:18px 0 24px}
 .pg-faq #signature-faq h1{font-size:clamp(44px,5.1vw,72px)}
 .pg-faq #signature-faq h2{font-size:clamp(32px,3.3vw,46px)}
 .pg-faq #signature-faq h3{font-size:26px}
-.pg-faq #signature-faq em{color:#cba7e3;font-weight:400}
-.pg-faq #signature-faq p,.pg-faq #signature-faq .scl-page-copy{font-size:14px;line-height:1.85;color:#bdb3c5;margin:0}
-.pg-faq #signature-faq .fq-kicker{font-size:10px;letter-spacing:.18em;line-height:1.7;color:#b99acc;text-transform:uppercase}
-.pg-faq #signature-faq .fq-hero{background:radial-gradient(ellipse at top right,#36223e55,transparent 65%)}
+.pg-faq #signature-faq em{color:var(--tint-violet-200);font-weight:400}
+.pg-faq #signature-faq p,.pg-faq #signature-faq .scl-page-copy{font-size:14px;line-height:1.85;color:var(--text-body);margin:0}
+.pg-faq #signature-faq .fq-kicker{font-size:10px;letter-spacing:.18em;line-height:1.7;color:var(--tint-violet-200);text-transform:uppercase}
+.pg-faq #signature-faq .fq-hero{background:radial-gradient(ellipse at top right,rgb(var(--surface-violet-rgb) / 0.33),transparent 65%)}
 .pg-faq #signature-faq .fq-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .pg-faq #signature-faq .fq-hero p{max-width:440px}
 .pg-faq #signature-faq figure{margin:0}
 .pg-faq #signature-faq figure img{width:100%;height:360px;object-fit:cover;display:block}
-.pg-faq #signature-faq figcaption{font-size:9px;letter-spacing:.15em;color:#a89aaf;padding-top:18px}
-.pg-faq #signature-faq .fq-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;color:#eee2f5;font-size:11px;text-decoration:none;border-bottom:1px solid #8d6c9c;padding:14px 0;margin-top:20px;transition:color .25s}
-.pg-faq #signature-faq .fq-link:hover{color:#cba7e3}
-.pg-faq #signature-faq .fq-answers{border-top:1px solid #ffffff18;background:#1A082C}
+.pg-faq #signature-faq figcaption{font-size:9px;letter-spacing:.15em;color:var(--text-muted);padding-top:18px}
+.pg-faq #signature-faq .fq-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;color:var(--text-strong);font-size:11px;text-decoration:none;border-bottom:1px solid var(--border-soft);padding:14px 0;margin-top:20px;transition:color .25s}
+.pg-faq #signature-faq .fq-link:hover{color:var(--tint-violet-200)}
+.pg-faq #signature-faq .fq-answers{border-top:1px solid #ffffff18;background:var(--brand-imperial)}
 .pg-faq #signature-faq .fq-answer-grid{display:grid;grid-template-columns: .75fr 1.65fr;gap:90px}
 .pg-faq #signature-faq .fq-side p{max-width:260px}
 .pg-faq #signature-faq .fq-group+.fq-group{margin-top:40px}
-.pg-faq #signature-faq .fq-group-label{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#b99acc;margin:0 0 20px}
+.pg-faq #signature-faq .fq-group-label{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--tint-violet-200);margin:0 0 20px}
 .pg-faq #signature-faq details{border-top:1px solid #ffffff24;padding:0;background:transparent}
 .pg-faq #signature-faq details:last-child{border-bottom:1px solid #ffffff24}
-.pg-faq #signature-faq summary{display:flex;justify-content:space-between;align-items:center;gap:24px;list-style:none;cursor:pointer;font-size:17px;line-height:1.5;padding:23px 0;color:#eee8f1;transition:color .25s}
+.pg-faq #signature-faq summary{display:flex;justify-content:space-between;align-items:center;gap:24px;list-style:none;cursor:pointer;font-size:17px;line-height:1.5;padding:23px 0;color:var(--text-strong);transition:color .25s}
 .pg-faq #signature-faq summary::-webkit-details-marker{display:none}
-.pg-faq #signature-faq summary span{color:#bd96d5;font-size:24px;line-height:1;flex:none;transition:transform .25s}
-.pg-faq #signature-faq details[open] summary{color:#cba7e3}
+.pg-faq #signature-faq summary span{color:var(--tint-violet-300);font-size:24px;line-height:1;flex:none;transition:transform .25s}
+.pg-faq #signature-faq details[open] summary{color:var(--tint-violet-200)}
 .pg-faq #signature-faq details[open] summary span{transform:rotate(45deg)}
 .pg-faq #signature-faq details .scl-page-copy{padding:0 40px 25px 0;max-width:760px}
-.pg-faq #signature-faq a:focus-visible,.pg-faq #signature-faq summary:focus-visible{outline:2px solid #cba7e3;outline-offset:5px}
+.pg-faq #signature-faq a:focus-visible,.pg-faq #signature-faq summary:focus-visible{outline:2px solid var(--tint-violet-200);outline-offset:5px}
 .pg-faq #signature-faq .fq-prep{border-top:1px solid #ffffff18}
 .pg-faq #signature-faq .fq-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-.pg-faq #signature-faq .fq-cards article{padding:30px;border:1px solid #ffffff20;background:linear-gradient(145deg,#24192d,#110e17);transition:transform .3s,border-color .3s}
-.pg-faq #signature-faq .fq-cards article:hover{transform:translateY(-5px);border-color:#9e79b5}
+.pg-faq #signature-faq .fq-cards article{padding:30px;border:1px solid #ffffff20;background:linear-gradient(145deg,var(--surface-raised),var(--brand-obsidian));transition:transform .3s,border-color .3s}
+.pg-faq #signature-faq .fq-cards article:hover{transform:translateY(-5px);border-color:var(--tint-violet-400)}
 .pg-faq #signature-faq .fq-cards p{font-size:13px}
-.pg-faq #signature-faq .fq-final{padding:50px 0;background:#1A082C;border-top:1px solid #ffffff20}
+.pg-faq #signature-faq .fq-final{padding:50px 0;background:var(--brand-imperial);border-top:1px solid #ffffff20}
 .pg-faq #signature-faq .fq-final .fq-wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .pg-faq #signature-faq .fq-final h2{margin-bottom:0}
-.pg-faq #signature-faq .fq-button{flex:none;display:inline-flex;gap:28px;align-items:center;padding:20px 26px;background:#D4D7DF;color:#201628;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .25s,transform .25s}
-.pg-faq #signature-faq .fq-button:hover{background:#eee1f6;transform:translateY(-2px)}
+.pg-faq #signature-faq .fq-button{flex:none;display:inline-flex;gap:28px;align-items:center;padding:20px 26px;background:var(--brand-platinum);color:var(--ink-strong);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .25s,transform .25s}
+.pg-faq #signature-faq .fq-button:hover{background:var(--text-strong);transform:translateY(-2px)}
 @media(max-width:1024px){.pg-faq #signature-faq .fq-hero-grid{gap:35px}
 .pg-faq #signature-faq figure img{height:310px}
 .pg-faq #signature-faq .fq-answer-grid{grid-template-columns:1fr;gap:32px}

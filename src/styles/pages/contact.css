@@ -1,28 +1,28 @@
 /* Ported from 13-signature-contact-contact-signature-car-lounge inline CSS; WordPress wrapper rules dropped; scoped to .pg-contact. */
-.pg-contact #signature-contact{background:#0B0914;color:#f4eff7;font-family:Montserrat,Arial,sans-serif;width:100%;overflow:hidden}
+.pg-contact #signature-contact{background:var(--brand-obsidian);color:var(--text-strong);font-family:var(--font-sans);width:100%;overflow:hidden}
 .pg-contact #signature-contact *{box-sizing:border-box}
 .pg-contact #signature-contact .ct-wrap{width:calc(100% - 2 * clamp(20px,4.5vw,72px));max-width:1320px;margin:auto}
 .pg-contact #signature-contact section{padding:68px 0}
-.pg-contact #signature-contact h1,.pg-contact #signature-contact h2,.pg-contact #signature-contact h3{font-family:Cinzel,Georgia,serif;font-weight:400;color:#f4eff7;letter-spacing:-.04em;line-height:1.12;margin:18px 0 24px}
+.pg-contact #signature-contact h1,.pg-contact #signature-contact h2,.pg-contact #signature-contact h3{font-family:var(--font-serif);font-weight:400;color:var(--text-strong);letter-spacing:-.04em;line-height:1.12;margin:18px 0 24px}
 .pg-contact #signature-contact h1{font-size:clamp(44px,5.2vw,72px)}
 .pg-contact #signature-contact h2{font-size:clamp(34px,3.5vw,48px)}
 .pg-contact #signature-contact h3{font-size:27px}
-.pg-contact #signature-contact em{color:#cba7e3;font-weight:400}
-.pg-contact #signature-contact p{font:14px/1.85 Montserrat,Arial,sans-serif;color:#bfb4c9;margin:0}
-.pg-contact #signature-contact .ct-label{font-size:10px;line-height:1.7;letter-spacing:.18em;text-transform:uppercase;color:#b994ce}
-.pg-contact #signature-contact .ct-hero{background:radial-gradient(ellipse at top right,#39234355,transparent 65%)}
+.pg-contact #signature-contact em{color:var(--tint-violet-200);font-weight:400}
+.pg-contact #signature-contact p{font:14px/1.85 var(--font-sans);color:var(--text-body);margin:0}
+.pg-contact #signature-contact .ct-label{font-size:10px;line-height:1.7;letter-spacing:.18em;text-transform:uppercase;color:var(--tint-violet-300)}
+.pg-contact #signature-contact .ct-hero{background:radial-gradient(ellipse at top right,rgb(var(--surface-violet-rgb) / 0.33),transparent 65%)}
 .pg-contact #signature-contact .ct-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .pg-contact #signature-contact .ct-hero p{max-width:420px}
 .pg-contact #signature-contact figure{margin:0}
 .pg-contact #signature-contact img{display:block;width:100%;object-fit:cover}
 .pg-contact #signature-contact .ct-hero img{height:350px}
-.pg-contact #signature-contact figcaption{font-style:normal;font-size:9px;letter-spacing:.15em;color:#a99bb3;margin-top:18px}
-.pg-contact #signature-contact .ct-button{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:#D4D7DF;border:1px solid #D4D7DF;padding:19px 25px;color:#26192e;text-decoration:none;font-size:10px;letter-spacing:.1em;font-weight:700;text-transform:uppercase;transition:transform .25s,background .25s}
+.pg-contact #signature-contact figcaption{font-style:normal;font-size:9px;letter-spacing:.15em;color:var(--text-muted);margin-top:18px}
+.pg-contact #signature-contact .ct-button{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:var(--brand-platinum);border:1px solid var(--brand-platinum);padding:19px 25px;color:var(--ink-strong);text-decoration:none;font-size:10px;letter-spacing:.1em;font-weight:700;text-transform:uppercase;transition:transform .25s,background .25s}
 .pg-contact #signature-contact .ct-hero .ct-button{margin-top:28px}
-.pg-contact #signature-contact .ct-button:hover{background:#eee0f7;transform:translateY(-3px)}
-.pg-contact #signature-contact a:focus-visible{outline:2px solid #cba7e3;outline-offset:5px}
-.pg-contact #signature-contact .ct-link{display:inline-flex;gap:30px;align-items:center;color:#ddc9e9;text-decoration:none;font-size:11px;border-bottom:1px solid #8b6b9d;padding:12px 0}
-.pg-contact #signature-contact .ct-connect{background:#1A082C;border-block:1px solid #ffffff20}
+.pg-contact #signature-contact .ct-button:hover{background:var(--tint-violet-100);transform:translateY(-3px)}
+.pg-contact #signature-contact a:focus-visible{outline:2px solid var(--tint-violet-200);outline-offset:5px}
+.pg-contact #signature-contact .ct-link{display:inline-flex;gap:30px;align-items:center;color:var(--tint-violet-100);text-decoration:none;font-size:11px;border-bottom:1px solid var(--tint-violet-400);padding:12px 0}
+.pg-contact #signature-contact .ct-connect{background:var(--brand-imperial);border-block:1px solid #ffffff20}
 .pg-contact #signature-contact .ct-connect-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}
 .pg-contact #signature-contact .ct-connect p{max-width:410px}
 .pg-contact #signature-contact .ct-connect .ct-link{margin-top:26px}
@@ -30,20 +30,20 @@
 .pg-contact #signature-contact .ct-info article{display:grid;grid-template-columns:38px 1fr;gap:20px;padding:25px 0;border-bottom:1px solid #ffffff26}
 .pg-contact #signature-contact .ct-info h3{font-size:24px;margin:0 0 10px}
 .pg-contact #signature-contact .ct-info p{font-size:13px;max-width:none}
-.pg-contact #signature-contact .ct-icon{color:#c5a2d9;font-size:22px}
+.pg-contact #signature-contact .ct-icon{color:var(--tint-violet-200);font-size:22px}
 .pg-contact #signature-contact .ct-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
 .pg-contact #signature-contact .ct-heading h2{margin-bottom:0}
 .pg-contact #signature-contact .ct-heading>p{max-width:340px}
 .pg-contact #signature-contact .ct-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:36px}
-.pg-contact #signature-contact .ct-card{border:1px solid #ffffff24;background:linear-gradient(145deg,#251a30,#120e18);padding:30px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
-.pg-contact #signature-contact .ct-card:hover{transform:translateY(-5px);border-color:#a984bf}
+.pg-contact #signature-contact .ct-card{border:1px solid #ffffff24;background:linear-gradient(145deg,var(--surface-raised),var(--brand-obsidian));padding:30px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.pg-contact #signature-contact .ct-card:hover{transform:translateY(-5px);border-color:var(--tint-violet-400)}
 .pg-contact #signature-contact .ct-card h3{font-size:26px;margin:22px 0 16px}
 .pg-contact #signature-contact .ct-card p{font-size:13px;flex:1}
 .pg-contact #signature-contact .ct-card .ct-link{margin-top:22px;align-self:flex-start}
 .pg-contact #signature-contact .ct-note{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:36px;padding-top:28px;border-top:1px solid #ffffff24}
 .pg-contact #signature-contact .ct-note h3{font-size:22px;margin:0 0 12px}
 .pg-contact #signature-contact .ct-note p{font-size:13px}
-.pg-contact #signature-contact .ct-final{padding:44px 0;border-top:1px solid #ffffff20;background:#1A082C}
+.pg-contact #signature-contact .ct-final{padding:44px 0;border-top:1px solid #ffffff20;background:var(--brand-imperial)}
 .pg-contact #signature-contact .ct-final .ct-wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
 .pg-contact #signature-contact .ct-final h2{margin:12px 0 0;font-size:clamp(32px,3.2vw,44px)}
 .pg-contact #signature-contact .ct-final .ct-button{flex:none}

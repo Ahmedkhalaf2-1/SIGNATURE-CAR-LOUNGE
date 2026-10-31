@@ -1,28 +1,28 @@
 /* Cars for Sale: inventory grid + detail routing stub. Scoped to .pg-cars; logical properties keep RTL correct. */
-.pg-cars{--cars-bg:#09080d;--cars-card:#100d15;--cars-line:#ffffff1f;--cars-line-strong:#ffffff3d;--cars-accent:#bc91e8;--cars-muted:#a49daa;--cars-avail:#9a6be0;--cars-hold:#c9ac84;--cars-sold:#8d93a0;
-  background:radial-gradient(ellipse at 88% 0,#2e1b3e55,transparent 55%),var(--cars-bg);color:#f4f1f3;min-height:60vh;overflow-x:clip}
+.pg-cars{--cars-bg:var(--brand-obsidian);--cars-card:var(--brand-obsidian);--cars-line:#ffffff1f;--cars-line-strong:#ffffff3d;--cars-accent:var(--tint-violet-300);--cars-muted:var(--text-muted);--cars-avail:var(--state-available);--cars-hold:var(--state-reserved);--cars-sold:var(--state-sold);
+  background:radial-gradient(ellipse at 88% 0,rgb(var(--surface-violet-rgb) / 0.33),transparent 55%),var(--cars-bg);color:var(--text-strong);min-height:60vh;overflow-x:clip}
 .pg-cars *{box-sizing:border-box}
 .pg-cars .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .pg-cars .cars-wrap{width:min(calc(100% - 9vw),1320px);margin-inline:auto}
 @media(min-width:1700px){.pg-cars .cars-wrap{width:min(calc(100% - 9vw),1500px)}}
 
 /* ---- Hero: dark showroom, photo on the inline-end side, copy over a dark gradient ---- */
-.pg-cars .cars-hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(440px,42vw,620px);padding:clamp(56px,7vw,104px) 0 clamp(110px,10vw,150px);overflow:hidden;background:#07060b}
+.pg-cars .cars-hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(440px,42vw,620px);padding:clamp(56px,7vw,104px) 0 clamp(110px,10vw,150px);overflow:hidden;background:var(--brand-obsidian)}
 .pg-cars .cars-hero__media{position:absolute;inset-block:0;inset-inline-end:0;width:74%;z-index:-1}
 .pg-cars .cars-hero__media img{width:100%;height:100%;object-fit:cover;object-position:62% 58%;display:block;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 42%);mask-image:linear-gradient(to right,transparent 0,#000 42%);animation:car-fade 1.1s ease both}
 html[dir='rtl'] .pg-cars .cars-hero__media img{-webkit-mask-image:linear-gradient(to left,transparent 0,#000 42%);mask-image:linear-gradient(to left,transparent 0,#000 42%)}
-.pg-cars .cars-hero:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 74% 34%,#c8873a1f,transparent 55%),radial-gradient(ellipse at 12% 30%,#5c24832e,transparent 50%),linear-gradient(to bottom,#07060b66,transparent 35%,#09080d 100%)}
+.pg-cars .cars-hero:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 74% 34%,rgb(var(--brand-neon-rgb) / 0.12),transparent 55%),radial-gradient(ellipse at 12% 30%,rgb(var(--brand-violet-rgb) / 0.18),transparent 50%),linear-gradient(to bottom,rgb(var(--brand-obsidian-rgb) / 0.4),transparent 35%,var(--brand-obsidian) 100%)}
 .pg-cars .cars-hero__copy{position:relative;animation:car-rise .9s cubic-bezier(.2,.7,.2,1) both}
-.pg-cars .cars-kicker{font-size:11px;font-weight:700;letter-spacing:.4em;color:#c19bdf;margin-bottom:18px}
+.pg-cars .cars-kicker{font-size:11px;font-weight:700;letter-spacing:.4em;color:var(--tint-violet-300);margin-bottom:18px}
 html body .scl-app .pg-cars .cars-hero h1{margin:0;max-width:7.5em;font-size:clamp(40px,6.2vw,96px)!important;line-height:1.02!important;font-weight:500!important;text-transform:uppercase}
 .pg-cars .cars-hero__rule{display:block;width:58px;height:2px;margin:26px 0 22px;background:var(--cars-accent)}
-.pg-cars .cars-lede{max-width:460px;margin:0;font-size:14px;line-height:1.9;color:#d3cbd9}
+.pg-cars .cars-lede{max-width:460px;margin:0;font-size:14px;line-height:1.9;color:var(--brand-platinum)}
 @keyframes car-fade{from{opacity:0}}
 @keyframes car-rise{from{opacity:0;transform:translateY(16px)}}
 
 /* ---- Filter bar (compact glass) ---- */
 .pg-cars .cars-browse{position:relative;z-index:2;margin-top:-84px;padding:0 0 110px}
-.pg-cars .car-toolbar{display:grid;grid-template-columns:minmax(200px,1.3fr) 4fr;gap:12px;align-items:end;padding:14px 18px 16px;border:1px solid #ffffff1f;border-top-color:#bc91e84d;background:linear-gradient(180deg,#15111dd9,#0a0810e6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.pg-cars .car-toolbar{display:grid;grid-template-columns:minmax(200px,1.3fr) 4fr;gap:12px;align-items:end;padding:14px 18px 16px;border:1px solid #ffffff1f;border-top-color:rgb(var(--tint-violet-300-rgb) / 0.3);background:linear-gradient(180deg,rgb(var(--surface-card-rgb) / 0.85),rgb(var(--brand-obsidian-rgb) / 0.9));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .pg-cars .car-toolbar__row{display:contents}
 .pg-cars .car-toolbar__toggle{display:none}
 .pg-cars .car-toolbar__filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
@@ -31,29 +31,29 @@ html body .scl-app .pg-cars .cars-hero h1{margin:0;max-width:7.5em;font-size:cla
 .pg-cars .car-select,.pg-cars .car-search{position:relative}
 .pg-cars .car-select svg{position:absolute;inset-inline-end:14px;top:50%;margin-top:-6px;pointer-events:none;color:var(--cars-accent)}
 .pg-cars .car-search svg{position:absolute;inset-inline-start:14px;top:50%;margin-top:-8px;pointer-events:none;color:var(--cars-muted)}
-.pg-cars :is(.car-select select,.car-search input){width:100%;height:44px;background:#ffffff08;border:1px solid #ffffff1c;border-radius:0;color:#f4f1f3;font-size:13px;appearance:none;-webkit-appearance:none;transition:border-color .2s,background .2s}
+.pg-cars :is(.car-select select,.car-search input){width:100%;height:44px;background:#ffffff08;border:1px solid #ffffff1c;border-radius:0;color:var(--text-strong);font-size:13px;appearance:none;-webkit-appearance:none;transition:border-color .2s,background .2s}
 .pg-cars .car-select select{padding-block:0;padding-inline:14px 38px;cursor:pointer;text-overflow:ellipsis}
 .pg-cars .car-search input{padding-block:0;padding-inline:40px 14px}
-.pg-cars .car-search input::placeholder{color:#8f8896}
-.pg-cars .car-select select option{background:#14101b;color:#f4f1f3}
+.pg-cars .car-search input::placeholder{color:var(--text-dim)}
+.pg-cars .car-select select option{background:var(--surface-card);color:var(--text-strong)}
 .pg-cars :is(.car-select select,.car-search input):hover{border-color:#ffffff38}
-.pg-cars :is(.car-select select,.car-search input):focus-visible{border-color:var(--cars-accent);background:#ffffff10;box-shadow:0 0 0 3px #8e24aa40}
+.pg-cars :is(.car-select select,.car-search input):focus-visible{border-color:var(--cars-accent);background:#ffffff10;box-shadow:0 0 0 3px rgb(var(--brand-neon-rgb) / 0.25)}
 
 /* ---- Results toolbar: count left; view + sort right ---- */
 .pg-cars .car-results{display:flex;align-items:center;justify-content:space-between;gap:14px 24px;flex-wrap:wrap;margin:22px 0 26px;padding-bottom:16px;border-bottom:1px solid var(--cars-line)}
 .pg-cars .car-results__info{display:flex;align-items:center;gap:22px}
 .pg-cars .car-results__controls{display:flex;align-items:center;gap:20px}
-.pg-cars .car-count{margin:0;font-size:12px;letter-spacing:.08em;color:#cfc8d6}
+.pg-cars .car-count{margin:0;font-size:12px;letter-spacing:.08em;color:var(--text-body)}
 .pg-cars .car-field--sort{flex-direction:row;align-items:center;gap:12px}
 .pg-cars .car-field--sort .car-select{min-width:210px}
 .pg-cars .car-view{display:flex;gap:6px}
 .pg-cars .car-view__btn{width:44px;height:44px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid #ffffff1c;color:var(--cars-muted);cursor:pointer;transition:color .2s,border-color .2s,background .2s}
 .pg-cars .car-view__btn:hover{color:#fff;border-color:#ffffff38}
-.pg-cars .car-view__btn.is-active{color:#fff;border-color:#8a55d8;background:#8e24aa1f}
-.pg-cars .car-link-btn{background:none;border:0;padding:6px 0;color:var(--cars-accent);font:600 11px/1.4 Montserrat,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#bc91e866;display:inline-flex;gap:8px;align-items:center}
+.pg-cars .car-view__btn.is-active{color:#fff;border-color:var(--brand-neon);background:rgb(var(--brand-neon-rgb) / 0.12)}
+.pg-cars .car-link-btn{background:none;border:0;padding:6px 0;color:var(--cars-accent);font:600 11px/1.4 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgb(var(--tint-violet-300-rgb) / 0.4);display:inline-flex;gap:8px;align-items:center}
 .pg-cars .car-link-btn:hover{text-decoration-color:currentColor}
-.pg-cars .car-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;background:#5c2483;border:1px solid #8e24aa;color:#fff;font:600 11px/1.5 Montserrat,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s}
-.pg-cars .car-btn:hover{background:#8e24aa}
+.pg-cars .car-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 26px;background:var(--brand-violet);border:1px solid var(--brand-neon);color:#fff;font:600 11px/1.5 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s}
+.pg-cars .car-btn:hover{background:var(--brand-neon)}
 
 /* ---- Grid: standard (3) / large (2) / list (1) ---- */
 .pg-cars .car-grid{--gap:clamp(20px,2vw,32px);list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
@@ -65,31 +65,31 @@ html body .scl-app .pg-cars .cars-hero h1{margin:0;max-width:7.5em;font-size:cla
 @keyframes car-in{from{opacity:0}}
 
 /* ---- Card: dark surface, hairline border, no lift ---- */
-.pg-cars .car-card{position:relative;height:100%;display:flex;flex-direction:column;background:#0c0a11;border:1px solid #ffffff14;transition:border-color .3s}
+.pg-cars .car-card{position:relative;height:100%;display:flex;flex-direction:column;background:var(--brand-obsidian);border:1px solid #ffffff14;transition:border-color .3s}
 .pg-cars .car-card:hover,.pg-cars .car-card:focus-within{border-color:#ffffff2e}
-.pg-cars .car-card__media{position:relative;aspect-ratio:3/2;overflow:hidden;background:#0d0a13}
+.pg-cars .car-card__media{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--brand-obsidian)}
 .pg-cars .car-card__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .3s}
 .pg-cars .car-card:hover .car-card__media img{transform:scale(1.025)}
-.pg-cars .car-card__media:after{content:'';position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(to top,#0c0a11,transparent);pointer-events:none}
+.pg-cars .car-card__media:after{content:'';position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(to top,var(--brand-obsidian),transparent);pointer-events:none}
 .pg-cars .car-card__media:before{content:'';position:absolute;inset-inline-start:0;inset-block-end:0;z-index:1;width:48px;height:2px;background:var(--cars-accent);opacity:.7;transition:width .5s cubic-bezier(.2,.7,.2,1),opacity .3s}
 .pg-cars .car-card:hover .car-card__media:before,.pg-cars .car-card:focus-within .car-card__media:before{width:88px;opacity:1}
 .pg-cars .car-card__body{display:flex;flex-direction:column;gap:14px;flex:1;padding:16px 24px 22px}
-.pg-cars .car-card__make{margin:0 0 6px;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#b6a6c9}
+.pg-cars .car-card__make{margin:0 0 6px;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--text-body)}
 .pg-cars .car-card__title bdi{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pg-cars h3.car-card__title{margin:0;font-family:Cinzel,Georgia,serif!important;font-size:clamp(20px,1.7vw,26px)!important;line-height:1.25!important;font-weight:500!important;letter-spacing:0!important}
+.pg-cars h3.car-card__title{margin:0;font-family:var(--font-serif)!important;font-size:clamp(20px,1.7vw,26px)!important;line-height:1.25!important;font-weight:500!important;letter-spacing:0!important}
 .pg-cars .car-card__title a{color:inherit;text-decoration:none}
 .pg-cars .car-card__title a:after{content:'';position:absolute;inset:0;z-index:2}
 .pg-cars .car-card__title a:focus-visible{outline:none}
-.pg-cars .car-card:has(.car-card__title a:focus-visible){outline:2px solid #d4d7df;outline-offset:4px}
-.pg-cars .car-card__variant{margin:4px 0 0;min-height:1.5em;font-size:12px;line-height:1.5;letter-spacing:.06em;color:#8f889a}
-.pg-cars .car-card__meta{display:flex;margin:0;font-size:12px;color:#cfc8d6}
+.pg-cars .car-card:has(.car-card__title a:focus-visible){outline:2px solid var(--brand-platinum);outline-offset:4px}
+.pg-cars .car-card__variant{margin:4px 0 0;min-height:1.5em;font-size:12px;line-height:1.5;letter-spacing:.06em;color:var(--text-dim)}
+.pg-cars .car-card__meta{display:flex;margin:0;font-size:12px;color:var(--text-body)}
 .pg-cars .car-card__meta dd{margin:0}
 .pg-cars .car-card__meta>div{display:flex}
 .pg-cars .car-card__meta>div+div:before{content:'';align-self:center;width:1px;height:11px;margin-inline:12px;background:#ffffff33}
 .pg-cars .car-card__foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;border-top:1px solid #ffffff12}
-.pg-cars .car-card__cta{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#a77be0;white-space:nowrap;transition:color .3s}
+.pg-cars .car-card__cta{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tint-violet-400);white-space:nowrap;transition:color .3s}
 .pg-cars .car-card__cta .dir-arrow{display:inline-block;transition:transform .3s}
-.pg-cars .car-card:hover .car-card__cta,.pg-cars .car-card:focus-within .car-card__cta{color:#c9a9f2}
+.pg-cars .car-card:hover .car-card__cta,.pg-cars .car-card:focus-within .car-card__cta{color:var(--tint-violet-200)}
 .pg-cars .car-card:hover .car-card__cta .dir-arrow{transform:translateX(4px)}
 html[dir='rtl'] .pg-cars .car-card:hover .car-card__cta .dir-arrow{transform:scaleX(-1) translateX(4px)}
 html[dir='rtl'] .pg-cars .car-card__title bdi{text-align:right}
@@ -108,16 +108,16 @@ html[dir='rtl'] .pg-cars .car-card__title bdi{text-align:right}
 
 /* ---- Status: restrained, text-first; marker shape differs per state ---- */
 .pg-cars .car-card--sold .car-card__media img{filter:grayscale(.6) brightness(.82)}
-.pg-cars .car-card--sold .car-card__title{color:#c9ccd3}
-.pg-cars .car-status{position:absolute;inset-block-start:14px;inset-inline-start:14px;z-index:2;display:inline-flex;align-items:center;gap:9px;padding:7px 11px;background:#07060bb8;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1;color:#ece7f1}
+.pg-cars .car-card--sold .car-card__title{color:var(--brand-platinum)}
+.pg-cars .car-status{position:absolute;inset-block-start:14px;inset-inline-start:14px;z-index:2;display:inline-flex;align-items:center;gap:9px;padding:7px 11px;background:rgb(var(--brand-obsidian-rgb) / 0.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1;color:var(--text-strong)}
 .pg-cars .car-status--available:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cars-avail)}
-.pg-cars .car-status--reserved{color:#d3bc98}
+.pg-cars .car-status--reserved{color:var(--state-reserved-text)}
 .pg-cars .car-status--reserved:before{content:'';width:12px;height:1px;background:var(--cars-hold)}
 .pg-cars .car-status--sold{color:var(--cars-sold)}
 
 /* ---- Empty ---- */
 .pg-cars .car-empty{text-align:center;padding:90px 20px;border:1px dashed var(--cars-line-strong)}
-.pg-cars .car-empty p{margin:0 0 24px;font-size:15px;color:#cfc8d6}
+.pg-cars .car-empty p{margin:0 0 24px;font-size:15px;color:var(--text-body)}
 
 /* ---- Responsive ---- */
 @media(max-width:1179px){
@@ -171,9 +171,9 @@ html[dir='rtl'] .pg-cars .car-card__title bdi{text-align:right}
   .pg-cars .car-toolbar{padding:14px}
   .pg-cars .car-toolbar__row{display:flex;gap:10px;align-items:flex-end}
   .pg-cars .car-field--search{flex:1}
-  .pg-cars .car-toolbar__toggle{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;background:#ffffff08;border:1px solid #ffffff1c;color:#f4f1f3;font:600 11px/1 Montserrat,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+  .pg-cars .car-toolbar__toggle{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;background:#ffffff08;border:1px solid #ffffff1c;color:var(--text-strong);font:600 11px/1 var(--font-sans);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
   .pg-cars .car-toolbar__toggle[aria-expanded='true']{border-color:var(--cars-accent)}
-  .pg-cars .car-toolbar__badge{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;background:#5c2483;border-radius:9px;font-size:10px}
+  .pg-cars .car-toolbar__badge{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;background:var(--brand-violet);border-radius:9px;font-size:10px}
   .pg-cars .car-toolbar__filters{display:none;grid-template-columns:repeat(2,minmax(0,1fr))}
   .pg-cars .car-toolbar__filters.is-open{display:grid}
   .pg-cars .car-results{margin:18px 0 22px}

@@ -46,7 +46,7 @@ export default function GalleryPage() {
         <PageHero />
       </main>
       <GalleryCollection />
-      <NativeFinale variant="panel" to={ROUTES.booking} label="Plan your consultation ↗" />
+      <NativeFinale variant="panel" to={ROUTES.booking} label="Plan your consultation" />
     </div>
   )
 }

@@ -47,7 +47,7 @@ export default function BookingPage() {
         <PageHero />
       </main>
       <BookingForm />
-      <NativeFinale variant="plain" to={ROUTES.faq} label="Explore our FAQs ↗" />
+      <NativeFinale variant="plain" to={ROUTES.faq} label="Explore our FAQs" />
     </div>
   )
 }

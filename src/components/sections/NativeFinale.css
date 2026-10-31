@@ -12,9 +12,9 @@
 }
 
 .native-finale__kicker {
-  font: 500 10px/1.8 Manrope, Arial, sans-serif;
+  font: 500 10px/1.8 var(--font-sans);
   letter-spacing: 0.16em;
-  color: #ba98d1;
+  color: var(--tint-violet-300);
 }
 
 .native-finale h2 {
@@ -37,7 +37,7 @@
 /* gallery */
 .native-finale--panel {
   padding: 64px 0;
-  background: radial-gradient(ellipse at right, #382243, #17101e);
+  background: radial-gradient(ellipse at right, var(--surface-violet), var(--surface-card));
 }
 
 .native-finale--panel .native-finale__inner {
@@ -52,7 +52,7 @@
 /* booking */
 .native-finale--plain {
   padding: 48px 0;
-  background: #191020;
+  background: var(--surface-raised);
 }
 
 .native-finale--plain .native-finale__inner {

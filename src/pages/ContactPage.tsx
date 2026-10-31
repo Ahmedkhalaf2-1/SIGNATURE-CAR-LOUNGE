@@ -3,6 +3,7 @@ import { Seo } from '../components/common/Seo'
 import { img } from '../lib/assets'
 import { useI18n } from '../i18n'
 import '../styles/pages/contact.css'
+import { DirArrow } from '../components/common/Icons'
 
 function Hero() {
   const { t } = useI18n()
@@ -20,7 +21,7 @@ function Hero() {
             {t('Tell us about your vehicle and the care you have in mind. Your next chapter starts with the details that matter to you.')}
           </p>
           <Link to="/signature-booking/" className="ct-button">
-            {t('Plan your consultation')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Plan your consultation')} <DirArrow dir="ne" />
           </Link>
         </div>
         <figure>
@@ -48,7 +49,7 @@ function Connect() {
             {t('Begin with a guided consultation request. Share your vehicle, your priorities and your preferred timing in one place.')}
           </p>
           <Link to="/signature-booking/" className="ct-link">
-            {t('Start your request')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Start your request')} <DirArrow dir="ne" />
           </Link>
         </div>
         <div className="ct-info">
@@ -67,7 +68,9 @@ function Connect() {
           </article>
           <article>
             <span className="ct-icon dir-arrow" aria-hidden="true">
-              ↗
+              <svg className="brand-icon dir-glyph-svg" viewBox="0 0 24 24" focusable="false">
+                <path d="M6 18 18 6M7.5 6H18v10.5" />
+              </svg>
             </span>
             <div>
               <h3>{t('Contact the team')}</h3>
@@ -119,7 +122,7 @@ function Section() {
             <h3>{t('Ask about a service.')}</h3>
             <p>{t('Tell us which surfaces or areas concern you, and what you would like to protect or refresh.')}</p>
             <Link to="/signature-services/" className="ct-link">
-              {t('Explore services')} <span className="dir-arrow" aria-hidden="true">↗</span>
+              {t('Explore services')} <DirArrow dir="ne" />
             </Link>
           </article>
           <article className="ct-card">
@@ -129,7 +132,7 @@ function Section() {
               {t('Considering detailing, protection and styling together? Share your priorities so the right sequence can be discussed.')}
             </p>
             <Link to="/signature-booking/" className="ct-link">
-              {t('Discuss your vehicle')} <span className="dir-arrow" aria-hidden="true">↗</span>
+              {t('Discuss your vehicle')} <DirArrow dir="ne" />
             </Link>
           </article>
           <article className="ct-card">
@@ -137,7 +140,7 @@ function Section() {
             <h3>{t('Plan the details.')}</h3>
             <p>{t('Share a preferred visit window and any relevant deadline. Confirm appointment arrangements before travelling.')}</p>
             <Link to="/signature-faq/" className="ct-link">
-              {t('Read the FAQs')} <span className="dir-arrow" aria-hidden="true">↗</span>
+              {t('Read the FAQs')} <DirArrow dir="ne" />
             </Link>
           </article>
         </div>
@@ -176,7 +179,7 @@ function Final() {
           </h2>
         </div>
         <Link to="/signature-booking/" className="ct-button">
-          {t('Start your consultation')} <span className="dir-arrow" aria-hidden="true">↗</span>
+          {t('Start your consultation')} <DirArrow dir="ne" />
         </Link>
       </div>
     </section>

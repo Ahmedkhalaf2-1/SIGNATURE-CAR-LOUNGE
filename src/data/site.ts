@@ -23,6 +23,7 @@ export const ROUTES = {
   about: '/signature-about/',
   services: '/signature-services/',
   cars: '/cars-for-sale',
+  visualizer: '/visualizer',
   experience: '/signature-experience/',
   gallery: '/signature-gallery/',
   faq: '/signature-faq/',

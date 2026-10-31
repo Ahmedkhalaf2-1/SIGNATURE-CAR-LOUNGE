@@ -52,7 +52,7 @@ export function ViewSwitch({ view, onChange }: { view: CarView; onChange: (v: Ca
           aria-pressed={v === view}
           onClick={() => onChange(v)}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+          <svg className="brand-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
             {ICONS[v]}
           </svg>
         </button>

@@ -19,3 +19,22 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* ---- Icon system (see components/common/Icons.tsx) ----
+   One recipe for every line icon: a 1.2px line at any rendered size (non-scaling stroke), square caps and mitered joins for the brand's
+   sharp geometry, colour from currentColor so hover/active states stay with the parent control. */
+.brand-icon{fill:none;stroke:currentColor;stroke-width:1.2px;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10}
+.brand-icon *{vector-effect:non-scaling-stroke}
+/* Inline arrows that replace the typographic glyphs. The box reproduces the glyph's metrics so no layout moves: its height is the parent's
+   line-height (the SVG is absolutely positioned, so it can never grow the line box), its width is 1em plus the parent's letter-spacing
+   (carried by a zero-size no-break space, which inherits it), and it never shrinks in a flex row. */
+.dir-glyph{position:relative;display:inline-block;flex:none;padding-inline-start:1em;line-height:inherit;white-space:nowrap}
+.dir-glyph>svg{position:absolute;inset-inline-start:0;top:50%;width:1em;height:1em;margin-top:-.5em}
+.dir-glyph::after{content:'\00a0';font-size:0}
+/* The chevron glyph was only 0.6em wide: trim its layout box, keep the drawing at full size and centred on it. */
+.dir-glyph--chevron{padding-inline-start:.6em}
+.dir-glyph--chevron>svg{inset-inline-start:-.2em}
+.dir-glyph-svg{display:block;width:1em;height:1em}
+
+/* Form controls do not inherit fonts by default; without this the Booking submit button silently fell back to Arial. */
+button,input,select,textarea{font-family:inherit}

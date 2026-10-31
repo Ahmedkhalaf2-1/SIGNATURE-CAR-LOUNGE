@@ -1,12 +1,29 @@
 /* Arabic (ar-SA) typography + right-to-left adjustments. English (ltr) is untouched by anything in this file. */
 
-/* Typography: Arabic joins letters, so letter-spacing and forced case must be off; Latin glyphs fall back to Montserrat. */
+/* Typography (guide section 4): Cairo SemiBold/Bold for Arabic headings and slogans, Tajawal for everything else (body, nav, buttons, forms,
+   data). Arabic joins letters, so letter-spacing and forced case stay off. Latin words fall through to Montserrat (see --font-ar-*). */
 html[lang='ar-SA'] body .scl-app,
 html[lang='ar-SA'] body .scl-app * {
-  font-family: 'IBM Plex Sans Arabic', Montserrat, Arial, sans-serif !important;
+  font-family: var(--font-ar-body) !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
   font-style: normal !important;
+}
+/* Doubled .scl-app + [dir] so this outranks page-level heading rules that also use !important. */
+html[lang='ar-SA'][dir='rtl'] body .scl-app.scl-app :is(h1, h2, h3, h4),
+html[lang='ar-SA'][dir='rtl'] body .scl-app.scl-app :is(h1, h2, h3, h4) * {
+  font-family: var(--font-ar-display) !important;
+}
+html[lang='ar-SA'][dir='rtl'] body .scl-app.scl-app :is(h1, h2, h3, h4) {
+  font-weight: 600 !important; /* Cairo SemiBold: a real weight of the variable file, never synthesised */
+}
+
+/* Page CSS scopes many heading rules under an ID (#scl-services-page h1 ...), which outranks every class chain. :is() takes the weight of its
+   heaviest argument, so listing those IDs lets the Arabic heading face win there too. */
+html[lang='ar-SA'][dir='rtl'] body .scl-app :is(#booking-concierge, #booking-form, #gallery-perspective, #page-content, #root, #scl-about-page, #scl-automotive-spa-page, #scl-body-kits-page, #scl-ceramic-coating-page, #scl-detailing-page, #scl-experience-page, #scl-gallery-page, #scl-ppf-page, #scl-reference, #scl-restoration-page, #scl-services-page, #signature-booking-info, #signature-contact, #signature-faq, #signature-privacy) :is(h1, h2, h3, h4),
+html[lang='ar-SA'][dir='rtl'] body .scl-app :is(#booking-concierge, #booking-form, #gallery-perspective, #page-content, #root, #scl-about-page, #scl-automotive-spa-page, #scl-body-kits-page, #scl-ceramic-coating-page, #scl-detailing-page, #scl-experience-page, #scl-gallery-page, #scl-ppf-page, #scl-reference, #scl-restoration-page, #scl-services-page, #signature-booking-info, #signature-contact, #signature-faq, #signature-privacy) :is(h1, h2, h3, h4) * {
+  font-family: var(--font-ar-display) !important;
+  font-weight: 600 !important;
 }
 
 /* Arabic glyphs read smaller than Latin at the same size: lift the tiny captured label sizes and open up line height. */
@@ -31,11 +48,11 @@ html[lang='ar-SA'] body .scl-app .site-nav .logotext small {
 }
 
 /* ---- Language switch (both languages): globe + code, divided from the nav CTA ---- */
-.scl-app .lang-switch{display:inline-flex;align-items:center;gap:8px;padding:6px 2px 6px 18px;background:transparent;color:#fff;border:0;border-inline-start:1px solid #ffffff33;border-radius:0;font:700 11px/1 Montserrat,Arial,sans-serif;letter-spacing:.14em;cursor:pointer;transition:color .2s}
-.scl-app .lang-switch svg{color:#bc91e8;transition:transform .3s}
-.scl-app .lang-switch:hover,.scl-app .lang-switch:focus-visible{background:transparent;color:#d9bdf2}
+.scl-app .lang-switch{display:inline-flex;align-items:center;gap:8px;padding:6px 2px 6px 18px;background:transparent;color:#fff;border:0;border-inline-start:1px solid #ffffff33;border-radius:0;font:700 11px/1 var(--font-sans);letter-spacing:.14em;cursor:pointer;transition:color .2s}
+.scl-app .lang-switch svg{color:var(--tint-violet-300);transition:transform .3s}
+.scl-app .lang-switch:hover,.scl-app .lang-switch:focus-visible{background:transparent;color:var(--tint-violet-200)}
 .scl-app .lang-switch:hover svg{transform:rotate(20deg)}
-html[lang='ar-SA'] body .scl-app .lang-switch{font-family:Montserrat,Arial,sans-serif!important;font-size:12px!important;letter-spacing:.1em!important}
+html[lang='ar-SA'] body .scl-app .lang-switch{font-family:var(--font-sans)!important;font-size:12px!important;letter-spacing:.1em!important}
 @media (max-width: 1150px) {
   .scl-app .lang-switch{align-self:flex-start;margin-top:16px;padding:8px 0;border-inline-start:0}
 }
@@ -49,6 +66,10 @@ html[dir='rtl'] .scl-app :is(.cta, .round-arr, .underline-link, .benefit, .shot 
 html[dir='rtl'] .scl-app .dir-arrow {
   transform: scaleX(-1);
 }
+/* The arrow SVG lives inside `.dir-arrow`, which is already mirrored above; the generic `svg` rule must not mirror it a second time. */
+html[dir='rtl'] .scl-app .dir-arrow > svg {
+  transform: none;
+}
 html[dir='rtl'] .scl-app .dir-arrow:not(.ct-icon) {
   display: inline-block; /* transforms need a box; .ct-icon is already a grid item */
 }
@@ -59,7 +80,7 @@ html[dir='rtl'] .scl-home .end:before {
   transform: scaleX(-1);
 }
 html[dir='rtl'] .scl-home .experience:before {
-  background: linear-gradient(270deg, #09070ef2, #09070eb0 55%, #09070e44), url('/assets/images/814e2e85-6807-48c1-961e-71ea36e7b1f8-1.webp') center/cover;
+  background: linear-gradient(270deg, rgb(var(--brand-obsidian-rgb) / 0.95), rgb(var(--brand-obsidian-rgb) / 0.69) 55%, rgb(var(--brand-obsidian-rgb) / 0.27)), url('/assets/images/814e2e85-6807-48c1-961e-71ea36e7b1f8-1.webp') center/cover;
 }
 
 /* Marquee loops towards the end of the line it starts from */
@@ -114,7 +135,7 @@ html[dir='rtl'] .scl-home .cta {
 @media (max-width: 600px) {
   html[dir='rtl'] .scl-home .timeline {
     border-left: 0;
-    border-right: 1px solid #cab4d77d;
+    border-right: 1px solid rgb(var(--tint-violet-200-rgb) / 0.49);
     padding-left: 0;
     padding-right: 20px;
   }
@@ -156,7 +177,7 @@ html[dir='rtl'] [class^='pg-'] .detail-gallery .scl-page-cta {
 }
 html[dir='rtl'] .pg-experience .scl-craft-timeline {
   border-left: 0 !important;
-  border-right: 1px solid #987ba566 !important;
+  border-right: 1px solid rgb(var(--border-soft-rgb) / 0.4) !important;
   padding-left: 0 !important;
   padding-right: 28px !important;
 }
@@ -170,20 +191,20 @@ html[dir='rtl'] .pg-faq #signature-faq details .scl-page-copy {
 }
 html[dir='rtl'] :is(.pg-privacy, .pg-terms) .info-note {
   border-left: 0 !important;
-  border-right: 2px solid #ad85c6 !important;
+  border-right: 2px solid var(--tint-violet-400) !important;
 }
 html[dir='rtl'] .pg-services #scl-services-page .service-image > span {
   left: auto;
   right: 18px;
 }
 html[dir='rtl'] :is(.pg-contact .ct-hero, .pg-faq .fq-hero) {
-  background-image: radial-gradient(ellipse at top left, #39234355, transparent 65%) !important;
+  background-image: radial-gradient(ellipse at top left, rgb(var(--surface-violet-rgb) / 0.33), transparent 65%) !important;
 }
 html[dir='rtl'] .pg-about .scl-about .scl-page-finale {
-  background: linear-gradient(270deg, #08070bea, #120c1bc9), url('/assets/images/26b659a1-2a3d-40db-a7f7-762ebf160670-1.webp') center/cover;
+  background: linear-gradient(270deg, rgb(var(--brand-obsidian-rgb) / 0.92), rgb(var(--surface-card-rgb) / 0.79)), url('/assets/images/26b659a1-2a3d-40db-a7f7-762ebf160670-1.webp') center/cover;
 }
 html[dir='rtl'] .pg-services #scl-services-page .scl-page-finale {
-  background: linear-gradient(270deg, #130d1bf5, #130d1bc7), url('/assets/images/fbb4cb03-08c1-45f4-9e93-3bcdcad22fbd-1.webp') center/cover;
+  background: linear-gradient(270deg, rgb(var(--surface-card-rgb) / 0.96), rgb(var(--surface-card-rgb) / 0.78)), url('/assets/images/fbb4cb03-08c1-45f4-9e93-3bcdcad22fbd-1.webp') center/cover;
 }
 
 /* Booking form: email/phone content is left-to-right even on an Arabic page; the select chevron moves to the start side. */

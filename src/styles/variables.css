@@ -1,29 +1,105 @@
-/* Design tokens extracted from the captured CSS (home #scl-reference, brand override block, interior pages). */
+/* Design tokens. Official palette from the Signature Car Lounge brand guidelines (section 3, Official Palette), plus a small,
+   documented set of WEB TINTS derived from it. Every tint is a mixture of official colours (sRGB, in the proportions noted), fitted
+   to the values the site already used, so the look is unchanged while the number of one-off colours collapses to a short list.
+   Use these names; do not add new hex values in component CSS. */
 :root {
-  /* palette */
-  --color-night: #0b0914;
-  --color-deep: #1a082c;
-  --color-violet: #5c2483;
-  --color-accent: #8e24aa;
-  --color-platinum: #d4d7df;
-  --color-lilac: #bc91e8;
-  --color-lilac-soft: #cba7e3;
-  --color-muted: #a49daa;
-  --color-text: #f4f1f3;
+
+  /* ---- OFFICIAL ---- */
+  --brand-imperial: #1A082C;  /* Imperial Purple (guide §3) */
+  --brand-violet: #5C2483;  /* Signature Violet */
+  --brand-platinum: #D4D7DF;  /* Platinum Chrome */
+  --brand-obsidian: #0B0914;  /* Obsidian Black */
+  --brand-neon: #8E24AA;  /* Neon Accent Violet */
+
+  /* ---- TINTS ---- */
+  --tint-violet-100: #DEC8E6;  /* 10% violet + 15% neon + 75% white */
+  --tint-violet-200: #D0A5DB;  /* 40% neon + 5% platinum + 55% white */
+  --tint-violet-300: #BD8ECE;  /* 45% neon + 35% platinum + 20% white */
+  --tint-violet-400: #AA7EBF;  /* 15% violet + 35% neon + 50% platinum */
+  --tint-platinum-100: #F1F1F3;  /* 90% white + 5% platinum + 5% imperial */
+  --tint-violet-muted: #643973;  /* muted violet for glows and gradient stops; 45% obsidian + 40% neon + 15% white */
+
+  /* ---- TEXT (on dark surfaces) ---- */
+  --text-strong: #F3F0F6;  /* headings; 85% white + 10% platinum + 5% violet */
+  --text-body: #C0B6C6;  /* body copy; 70% white + 25% imperial + 5% neon  (10.1:1 on obsidian) */
+  --text-muted: #A6A1AF;  /* secondary copy; 45% white + 35% imperial + 20% platinum  (7.8:1) */
+  --text-dim: #8B8493;  /* captions; 50% white + 40% imperial + 10% obsidian  (5.5:1) */
+
+  /* ---- INK (text on light / platinum surfaces) ---- */
+  --ink-strong: #191522;  /* 85% obsidian + 10% imperial + 5% white  (12.4:1 on platinum) */
+  --ink-muted: #595263;  /* 35% imperial + 35% obsidian + 30% white  (5.6:1 on platinum) */
+
+  /* ---- LINES AND SURFACES ---- */
+  --border-muted: #645472;  /* darker violet-grey hairlines; 65% imperial + 30% white + 5% neon */
+  --border-soft: #8D7A98;  /* violet-grey hairlines; 45% imperial + 45% white + 10% neon */
+  --line-dark: #332E3D;  /* dark hairlines; 60% obsidian + 25% imperial + 15% white */
+  --surface-card: #15131E;  /* cards; 95% obsidian + 5% platinum */
+  --surface-raised: #1E1727;  /* raised surfaces; 90% obsidian + 5% neon + 5% white */
+  --surface-violet: #2F1F40;  /* violet-tinted gradient stops; 90% imperial + 5% platinum + 5% white */
+
+  /* ---- SEMANTIC (keep: they carry meaning, never decorative) ---- */
+  --state-available: var(--tint-violet-300);  /* vehicle available: brand violet, legible on dark */
+  --state-error: #C46A6A;  /* form error */
+  --state-reserved: #C9AC84;  /* vehicle reserved / on hold */
+  --state-reserved-text: #D3BC98;  /* reserved label text */
+  --state-sold: #8D93A0;  /* vehicle sold */
+
+  /* channel triplets for alpha: rgb(var(--brand-violet-rgb) / .3) */
+  --brand-imperial-rgb: 26 8 44;
+  --brand-violet-rgb: 92 36 131;
+  --brand-platinum-rgb: 212 215 223;
+  --brand-obsidian-rgb: 11 9 20;
+  --brand-neon-rgb: 142 36 170;
+  --tint-violet-muted-rgb: 100 57 115;
+  --border-muted-rgb: 100 84 114;
+  --tint-violet-100-rgb: 222 200 230;
+  --tint-violet-200-rgb: 208 165 219;
+  --tint-violet-300-rgb: 189 142 206;
+  --tint-violet-400-rgb: 170 126 191;
+  --tint-platinum-100-rgb: 241 241 243;
+  --text-strong-rgb: 243 240 246;
+  --text-body-rgb: 192 182 198;
+  --text-muted-rgb: 166 161 175;
+  --text-dim-rgb: 139 132 147;
+  --ink-strong-rgb: 25 21 34;
+  --ink-muted-rgb: 89 82 99;
+  --border-soft-rgb: 141 122 152;
+  --line-dark-rgb: 51 46 61;
+  --surface-card-rgb: 21 19 30;
+  --surface-raised-rgb: 30 23 39;
+  --surface-violet-rgb: 47 31 64;
+  --state-error-rgb: 196 106 106;
+  --state-reserved-rgb: 201 172 132;
+  --state-reserved-text-rgb: 211 188 152;
+  --state-sold-rgb: 141 147 160;
+
+  /* ---- compatibility aliases (existing names kept so nothing downstream breaks) ---- */
+  --color-night: var(--brand-obsidian);
+  --color-deep: var(--brand-imperial);
+  --color-violet: var(--brand-violet);
+  --color-accent: var(--brand-neon);
+  --color-platinum: var(--brand-platinum);
+  --color-lilac: var(--tint-violet-300);
+  --color-lilac-soft: var(--tint-violet-200);
+  --color-muted: var(--text-muted);
+  --color-text: var(--text-strong);
   --color-line: #ffffff32;
 
-  /* legacy names used by the captured brand block */
-  --signature-purple: var(--color-deep);
-  --signature-violet: var(--color-violet);
-  --signature-platinum: var(--color-platinum);
-  --signature-black: var(--color-night);
-  --signature-accent: var(--color-accent);
+  --signature-purple: var(--brand-imperial);
+  --signature-violet: var(--brand-violet);
+  --signature-platinum: var(--brand-platinum);
+  --signature-black: var(--brand-obsidian);
+  --signature-accent: var(--brand-neon);
 
-  /* type */
-  --font-serif: Cinzel, Georgia, serif;
-  --font-sans: Montserrat, Arial, sans-serif;
+  /* ---- type (guide §4: Montserrat / Cinzel, Cairo / Tajawal) ---- */
+  --font-serif: Cinzel, serif;
+  --font-sans: Montserrat, sans-serif;
+  /* Arabic: Cairo SemiBold/Bold for headings and slogans, Tajawal Regular/Medium for body, forms and data. */
+  /* Latin words on Arabic pages (brand name, car models) fall through to Montserrat, because the Arabic files only cover the Arabic range. */
+  --font-ar-display: Cairo, Montserrat, sans-serif;
+  --font-ar-body: Tajawal, Cairo, Montserrat, sans-serif;
 
-  /* layout */
+  /* ---- layout ---- */
   --container-width: 1320px;
   --gutter: clamp(20px, 4.5vw, 72px);
   --nav-height: 94px;

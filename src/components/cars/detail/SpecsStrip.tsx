@@ -1,6 +1,7 @@
 import { useI18n } from '../../../i18n'
 import type { SpecItem } from './useCarSpecs'
 import { SpecIcon } from './SpecIcons'
+import { DirArrow } from '../../common/Icons'
 
 /** Icon spec row plus the two primary actions. Values are isolated left-to-right so units stay attached in Arabic. */
 export function SpecsStrip({ items }: { items: SpecItem[] }) {
@@ -25,10 +26,10 @@ export function SpecsStrip({ items }: { items: SpecItem[] }) {
       )}
       <div className="cd-wrap cd-actions">
         <a className="car-btn" href="#enquire">
-          {t('Enquire About This Vehicle')} <span className="dir-arrow" aria-hidden="true">→</span>
+          {t('Enquire About This Vehicle')} <DirArrow dir="e" />
         </a>
         <a className="car-btn car-btn--ghost" href="#details">
-          {t('View Full Details')} <span className="dir-arrow" aria-hidden="true">→</span>
+          {t('View Full Details')} <DirArrow dir="e" />
         </a>
       </div>
     </section>

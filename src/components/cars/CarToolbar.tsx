@@ -3,6 +3,7 @@ import { useI18n } from '../../i18n'
 import type { CarListing } from '../../data/cars'
 import { STATUSES, activeFilterCount, filterOptions, type CarFilters, type CarView, type SortKey } from './carQuery'
 import { ViewSwitch } from './ViewSwitch'
+import { SearchIcon } from '../common/Icons'
 import { useCarFormat } from './useCarFormat'
 
 interface Props {
@@ -21,8 +22,8 @@ function Field({ id, label, children }: { id: string; label: string; children: R
       <label htmlFor={id}>{label}</label>
       <div className="car-select">
         {children}
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-          <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <svg className="brand-icon" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m6 9 6 6 6-6" />
         </svg>
       </div>
     </div>
@@ -46,10 +47,7 @@ export function CarToolbar({ cars, filters, onChange, onClear, resultCount, view
         <div className="car-field car-field--search">
           <label htmlFor={id('q')}>{t('Search vehicles')}</label>
           <div className="car-search">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-              <circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="1.5" />
-              <path d="m16 16 4.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
+            <SearchIcon />
             <input
               id={id('q')}
               type="search"
@@ -143,8 +141,8 @@ export function CarToolbar({ cars, filters, onChange, onClear, resultCount, view
                 <option value="make">{t('Make: A to Z')}</option>
                 {years.length > 0 && <option value="newest">{t('Newest')}</option>}
               </select>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              <svg className="brand-icon" width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="m6 9 6 6 6-6" />
               </svg>
             </div>
           </div>

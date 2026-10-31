@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Seo } from '../components/common/Seo'
 import { img } from '../lib/assets'
-import { PageArrowIcon } from '../components/common/Icons'
+import { PageArrowIcon, DirArrow } from '../components/common/Icons'
 import { PageFinale } from '../components/sections/PageFinale'
 import { useI18n } from '../i18n'
 import '../styles/pages/restoration.css'
@@ -162,7 +162,7 @@ function DetailFaq() {
           </h2>
           <p>{t('Start with your questions. The right approach begins with understanding your car.')}</p>
           <Link to="/signature-booking/" className="detail-text-link">
-            {t('Discuss your vehicle')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Discuss your vehicle')} <DirArrow dir="ne" />
           </Link>
         </div>
         <div>

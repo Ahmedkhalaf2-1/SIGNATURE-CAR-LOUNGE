@@ -3,6 +3,7 @@ import { carAlt, type CarListing } from '../../data/cars'
 import { useI18n } from '../../i18n'
 import { ROUTES } from '../../data/site'
 import { useCarFormat } from './useCarFormat'
+import { DirArrow } from '../common/Icons'
 
 /**
  * Image-led inventory card. The model name is the single link; its ::after stretches over the card, so the whole
@@ -64,7 +65,7 @@ export function CarCard({ car, eager = false }: { car: CarListing; eager?: boole
         </dl>
         <div className="car-card__foot">
           <span className="car-card__cta" aria-hidden="true">
-            {t('View Details')} <span className="dir-arrow">→</span>
+            {t('View Details')} <DirArrow dir="e" />
           </span>
         </div>
       </div>

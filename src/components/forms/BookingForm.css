@@ -1,7 +1,7 @@
 /* Ported from the booking page's native Elementor form rules (#booking-form). */
 .booking-form-section {
   padding: 64px 0;
-  background: #100d15;
+  background: var(--brand-obsidian);
   border-top: 1px solid #ffffff20;
   scroll-margin-top: 35px;
   font-family: var(--font-sans);
@@ -22,7 +22,7 @@
   grid-column: 1;
   grid-row: 1;
   margin: 0;
-  color: #f3edf6;
+  color: var(--text-strong);
 }
 
 .booking-form-intro {
@@ -30,8 +30,8 @@
   grid-row: 2;
   align-self: start;
   max-width: 320px;
-  color: #bcb3c4;
-  font: 14px/1.85 Manrope, Arial, sans-serif;
+  color: var(--text-body);
+  font: 14px/1.85 var(--font-sans);
 }
 
 .booking-form-intro a {
@@ -59,8 +59,8 @@
 .booking-form label {
   display: block;
   margin: 0 0 9px;
-  color: #d5c9de;
-  font: 11px/1.5 Manrope, Arial, sans-serif;
+  color: var(--tint-violet-100);
+  font: 11px/1.5 var(--font-sans);
   letter-spacing: 0.04em;
 }
 
@@ -70,12 +70,12 @@
   width: 100%;
   min-height: 50px;
   padding: 13px 14px;
-  background: #0e0b13;
-  color: #f4eef7;
-  border: 1px solid #665271;
+  background: var(--brand-obsidian);
+  color: var(--text-strong);
+  border: 1px solid var(--border-muted);
   border-radius: 0;
   box-shadow: none;
-  font: 14px/1.5 Manrope, Arial, sans-serif;
+  font: 14px/1.5 var(--font-sans);
 }
 
 .booking-form textarea {
@@ -86,7 +86,7 @@
 .booking-form input:focus,
 .booking-form select:focus,
 .booking-form textarea:focus {
-  outline: 2px solid #b58dcb;
+  outline: 2px solid var(--tint-violet-300);
   outline-offset: 2px;
 }
 
@@ -105,7 +105,7 @@
   right: 14px;
   width: 11px;
   height: 11px;
-  fill: #c9aada;
+  fill: var(--tint-violet-200);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -114,9 +114,9 @@
   width: 100%;
   min-height: 54px;
   padding: 18px 24px;
-  background: #d9c1e8;
-  color: #25172e;
-  border: 0;
+  background: var(--brand-violet);
+  color: #fff;
+  border: 1px solid var(--brand-neon);
   border-radius: 0;
   font-size: 10px;
   font-weight: 700;
@@ -126,15 +126,15 @@
 }
 
 .booking-form button[type='submit']:hover {
-  background: #eee0f7;
-  color: #25172e;
+  background: var(--brand-neon);
+  color: #fff;
   transform: translateY(-2px);
 }
 
 .booking-form__status {
   margin: 0;
-  color: #d5c9de;
-  font: 14px/1.5 Manrope, Arial, sans-serif;
+  color: var(--tint-violet-100);
+  font: 14px/1.5 var(--font-sans);
 }
 
 @media (max-width: 1024px) {

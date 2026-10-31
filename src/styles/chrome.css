@@ -3,3 +3,6 @@
 .scl-home--header .site-nav{position:relative;}
 .scl-home--header .navinner{height:94px}
 @media(max-width:900px){.scl-home--header .navinner{height:78px}}
+
+/* Header: the extra Visualizer link needs slightly tighter spacing between the 1150px collapse point and ~1300px. */
+@media(min-width:1151px) and (max-width:1300px){.scl-home .links{gap:14px}.scl-home .links .cta{padding-inline:14px;gap:10px}}

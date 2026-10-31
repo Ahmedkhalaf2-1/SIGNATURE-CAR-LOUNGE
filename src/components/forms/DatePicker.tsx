@@ -144,7 +144,7 @@ export function DatePicker({ id, name, value, onChange }: DatePickerProps) {
           }
         }}
       />
-      <svg className="dp__icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg className="dp__icon brand-icon" aria-hidden="true" viewBox="0 0 24 24">
         <rect x="3.5" y="5" width="17" height="15.5" rx="1" />
         <path d="M3.5 10h17M8 3v4M16 3v4" />
       </svg>
@@ -152,7 +152,7 @@ export function DatePicker({ id, name, value, onChange }: DatePickerProps) {
         <div className="dp__popup" id={popupId} role="dialog" aria-label={t('Choose a date')}>
           <div className="dp__head">
             <button type="button" className="dp__nav" aria-label={t('Previous month')} onClick={() => stepMonth(-1)} disabled={!canGoPrev}>
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <svg className="brand-icon" aria-hidden="true" viewBox="0 0 24 24">
                 <path d="m15 5-7 7 7 7" />
               </svg>
             </button>
@@ -160,7 +160,7 @@ export function DatePicker({ id, name, value, onChange }: DatePickerProps) {
               {fmt.month.format(view)}
             </div>
             <button type="button" className="dp__nav dp__nav--next" aria-label={t('Next month')} onClick={() => stepMonth(1)}>
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <svg className="brand-icon" aria-hidden="true" viewBox="0 0 24 24">
                 <path d="m15 5-7 7 7 7" />
               </svg>
             </button>

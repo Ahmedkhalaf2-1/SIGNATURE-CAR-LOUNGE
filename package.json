@@ -11,22 +11,28 @@
     "build:client": "tsc -b && vite build",
     "build:server": "npm --prefix server run build",
     "start:server": "npm --prefix server run start",
-    "typecheck": "tsc -b && npm --prefix server run typecheck",
+    "typecheck": "tsc -b && npm --prefix server run typecheck && npm run check:catalog",
     "lint": "oxlint",
     "preview": "vite preview",
     "setup": "npm install && npm --prefix server install",
-    "i18n:check": "node scripts/check-i18n.mjs"
+    "i18n:check": "node scripts/check-i18n.mjs",
+    "check:catalog": "node scripts/check-car-catalog.mjs"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "qrcode-generator": "^2.0.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-helmet-async": "^3.0.0",
-    "react-router-dom": "^7.18.5"
+    "react-router-dom": "^7.18.5",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.187.0",
     "@vitejs/plugin-react": "^6.1.2",
     "concurrently": "^10.0.6",
     "oxlint": "^1.89.0",

@@ -1,7 +1,7 @@
 /* Ported from the gallery page's native Elementor grid rules (#page-content / #collection). */
 .gallery-page-content {
   padding: 0 0 72px;
-  background: #09080d;
+  background: var(--brand-obsidian);
 }
 
 .gallery-collection {

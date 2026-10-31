@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import './NativeFinale.css'
 import { useI18n } from '../../i18n'
+import { DirArrow } from '../common/Icons'
 
 interface NativeFinaleProps {
   /** `panel` = bordered gradient card (gallery); `plain` = flat band (booking). */
@@ -20,7 +21,9 @@ export function NativeFinale({ variant, to, label }: NativeFinaleProps) {
           {t('Let’s start with')} <em>{t('your vision.')}</em>
         </h2>
         <Link className="scl-page-cta native-finale__cta" to={to}>
-          {t(label)}
+          <span>
+            {t(label)} <DirArrow dir="ne" />
+          </span>
         </Link>
       </div>
     </section>

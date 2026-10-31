@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-const base = { width: 28, height: 28, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.2, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, focusable: false } as const
+const base = { className: 'brand-icon', width: 28, height: 28, viewBox: '0 0 24 24', 'aria-hidden': true, focusable: false } as const
 
 const PATHS: Record<string, ReactNode> = {
   year: (

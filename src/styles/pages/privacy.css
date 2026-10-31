@@ -1,31 +1,31 @@
 /* Ported from 15-signature-privacy-privacy-information-signature-car-lounge inline CSS; WordPress wrapper rules dropped; scoped to .pg-privacy. */
-.pg-privacy #signature-privacy{background:#0B0914;color:#f4eef8;font-family:Montserrat,Arial,sans-serif;width:100%}
+.pg-privacy #signature-privacy{background:var(--brand-obsidian);color:var(--text-strong);font-family:var(--font-sans);width:100%}
 .pg-privacy #signature-privacy *{box-sizing:border-box}
 .pg-privacy #signature-privacy .info-wrap{width:calc(100% - 2 * clamp(20px,4.5vw,72px));max-width:1320px;margin:auto}
 .pg-privacy #signature-privacy section{padding:64px 0}
-.pg-privacy #signature-privacy .info-hero{background:radial-gradient(ellipse at 90% 20%,#302039 0,transparent 65%);border-bottom:1px solid #33293c}
-.pg-privacy #signature-privacy .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#cba7e3;margin:0 0 20px}
-.pg-privacy #signature-privacy h1,.pg-privacy #signature-privacy h2,.pg-privacy #signature-privacy h3{font-family:Cinzel,Georgia,serif;font-weight:400;letter-spacing:-.04em;color:#f4eef8;line-height:1.12;margin:0 0 20px}
+.pg-privacy #signature-privacy .info-hero{background:radial-gradient(ellipse at 90% 20%,var(--surface-violet) 0,transparent 65%);border-bottom:1px solid var(--line-dark)}
+.pg-privacy #signature-privacy .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--tint-violet-200);margin:0 0 20px}
+.pg-privacy #signature-privacy h1,.pg-privacy #signature-privacy h2,.pg-privacy #signature-privacy h3{font-family:var(--font-serif);font-weight:400;letter-spacing:-.04em;color:var(--text-strong);line-height:1.12;margin:0 0 20px}
 .pg-privacy #signature-privacy h1{font-size:clamp(44px,5.2vw,72px);max-width:850px}
 .pg-privacy #signature-privacy h2{font-size:38px}
 .pg-privacy #signature-privacy h3{font-size:26px}
-.pg-privacy #signature-privacy em{color:#cba7e3}
-.pg-privacy #signature-privacy p{font-size:14px;line-height:1.85;color:#bfb4c9;margin:0 0 18px}
+.pg-privacy #signature-privacy em{color:var(--tint-violet-200)}
+.pg-privacy #signature-privacy p{font-size:14px;line-height:1.85;color:var(--text-body);margin:0 0 18px}
 .pg-privacy #signature-privacy .intro{max-width:610px}
 .pg-privacy #signature-privacy .info-layout{display:grid;grid-template-columns:1fr 2fr;gap:8vw}
 .pg-privacy #signature-privacy .info-nav{display:grid;gap:0;margin-top:28px}
-.pg-privacy #signature-privacy .info-nav a{padding:14px 0;border-bottom:1px solid #33293c;color:#d4c6dd;text-decoration:none;font-size:12px}
-.pg-privacy #signature-privacy article{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid #33293c;scroll-margin-top:120px}
+.pg-privacy #signature-privacy .info-nav a{padding:14px 0;border-bottom:1px solid var(--line-dark);color:var(--tint-violet-100);text-decoration:none;font-size:12px}
+.pg-privacy #signature-privacy article{padding:0 0 30px;margin-bottom:30px;border-bottom:1px solid var(--line-dark);scroll-margin-top:120px}
 .pg-privacy #signature-privacy article:last-child{margin-bottom:0}
-.pg-privacy #signature-privacy .number{color:#a47cbd;font-size:11px;letter-spacing:.15em;display:block;margin-bottom:14px}
-.pg-privacy #signature-privacy .info-note{padding:25px;background:#17111f;border-left:2px solid #ad85c6}
+.pg-privacy #signature-privacy .number{color:var(--tint-violet-400);font-size:11px;letter-spacing:.15em;display:block;margin-bottom:14px}
+.pg-privacy #signature-privacy .info-note{padding:25px;background:var(--surface-card);border-left:2px solid var(--tint-violet-400)}
 .pg-privacy #signature-privacy .info-note p{margin:0}
-.pg-privacy #signature-privacy .info-end{background:#1A082C;border-top:1px solid #33293c}
+.pg-privacy #signature-privacy .info-end{background:var(--brand-imperial);border-top:1px solid var(--line-dark)}
 .pg-privacy #signature-privacy .end-row{display:flex;align-items:center;justify-content:space-between;gap:30px}
-.pg-privacy #signature-privacy .info-button{display:inline-flex;padding:17px 24px;background:#D4D7DF;color:#21162a;text-decoration:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;transition:background .25s;white-space:nowrap}
+.pg-privacy #signature-privacy .info-button{display:inline-flex;padding:17px 24px;background:var(--brand-platinum);color:var(--ink-strong);text-decoration:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;transition:background .25s;white-space:nowrap}
 .pg-privacy #signature-privacy a:hover{color:#fff}
-.pg-privacy #signature-privacy .info-button:hover{background:#eee0f7;color:#21162a}
-.pg-privacy #signature-privacy a:focus-visible{outline:2px solid #D4D7DF;outline-offset:5px}
+.pg-privacy #signature-privacy .info-button:hover{background:var(--tint-violet-100);color:var(--ink-strong)}
+.pg-privacy #signature-privacy a:focus-visible{outline:2px solid var(--brand-platinum);outline-offset:5px}
 @media(max-width:767px){.pg-privacy #signature-privacy section{padding:44px 0}
 .pg-privacy #signature-privacy .info-layout{grid-template-columns:1fr;gap:36px}
 .pg-privacy #signature-privacy h1{font-size:44px}

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Seo } from '../components/common/Seo'
 import { img } from '../lib/assets'
-import { PageArrowIcon } from '../components/common/Icons'
+import { PageArrowIcon, DirArrow } from '../components/common/Icons'
 import { PageFinale } from '../components/sections/PageFinale'
 import { useI18n } from '../i18n'
 import '../styles/pages/about.css'
@@ -104,7 +104,9 @@ function PageDark() {
               )}
             </p>
             <Link to="/signature-experience/" className="scl-page-cta">
-              {t('Discover the experience ↗')}
+              <span>
+                {t('Discover the experience')} <DirArrow dir="ne" />
+              </span>
             </Link>
           </div>
         </div>

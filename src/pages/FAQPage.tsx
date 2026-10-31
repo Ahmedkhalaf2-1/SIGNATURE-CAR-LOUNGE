@@ -3,6 +3,7 @@ import { Seo } from '../components/common/Seo'
 import { img } from '../lib/assets'
 import { useI18n } from '../i18n'
 import '../styles/pages/faq.css'
+import { DirArrow } from '../components/common/Icons'
 
 function Hero() {
   const { t } = useI18n()
@@ -18,7 +19,7 @@ function Hero() {
           </h1>
           <p>{t('Answers to common questions about choosing and planning your vehicle care.')}</p>
           <a href="#faq-answers" className="fq-link">
-            {t('Explore the answers')} <span aria-hidden="true">↓</span>
+            {t('Explore the answers')} <DirArrow dir="s" />
           </a>
         </div>
         <figure>
@@ -44,7 +45,7 @@ function Answers() {
           </h2>
           <p>{t('From choosing a service to planning your visit, start with the details that matter.')}</p>
           <Link to="/signature-services/" className="fq-link">
-            {t('Explore our services')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Explore our services')} <DirArrow dir="ne" />
           </Link>
         </div>
         <div>
@@ -236,7 +237,7 @@ function Final() {
           </h2>
         </div>
         <Link to="/signature-booking/" className="fq-button">
-          {t('Plan your consultation')} <span className="dir-arrow" aria-hidden="true">↗</span>
+          {t('Plan your consultation')} <DirArrow dir="ne" />
         </Link>
       </div>
     </section>

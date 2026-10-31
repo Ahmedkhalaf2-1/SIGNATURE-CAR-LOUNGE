@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Seo } from '../components/common/Seo'
 import { img } from '../lib/assets'
-import { PageArrowIcon } from '../components/common/Icons'
+import { PageArrowIcon, DirArrow, DetailingIcon, PpfIcon, BodyKitsIcon } from '../components/common/Icons'
 import { PageFinale } from '../components/sections/PageFinale'
 import { useI18n } from '../i18n'
 import '../styles/pages/services.css'
@@ -68,7 +68,7 @@ function ServiceCollection() {
                 )}
               </p>
               <Link to="/signature-detailing/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -89,7 +89,7 @@ function ServiceCollection() {
                 )}
               </p>
               <Link to="/signature-ppf/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -108,7 +108,7 @@ function ServiceCollection() {
                 {t('Discuss surface preparation and ceramic protection to enhance the finish and support an easier maintenance routine.')}
               </p>
               <Link to="/signature-ceramic-coating/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -121,7 +121,7 @@ function ServiceCollection() {
               <p className="service-tag">{t('Make your presence personal.')}</p>
               <p>{t('Refine your vehicle’s silhouette with a considered approach to styling, component compatibility and fitment.')}</p>
               <Link to="/signature-body-kits/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -134,7 +134,7 @@ function ServiceCollection() {
               <p className="service-tag">{t('Respect the character. Renew the detail.')}</p>
               <p>{t('Renew the cosmetic character of your vehicle with a considered scope that respects its original personality.')}</p>
               <Link to="/signature-restoration/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -151,7 +151,7 @@ function ServiceCollection() {
               <p className="service-tag">{t('A fresh feeling. Every journey.')}</p>
               <p>{t('Refresh the details you see and touch, with attentive cleaning and presentation for a more enjoyable drive.')}</p>
               <Link to="/signature-automotive-spa/" className="service-link">
-                {t('Explore service')} <span className="dir-arrow" aria-hidden="true">↗</span>
+                {t('Explore service')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -184,9 +184,7 @@ function Direction() {
         <div className="direction-grid">
           <article className="direction-card">
             <div className="direction-top">
-              <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                <path d="M16 3l3.5 9.5L29 16l-9.5 3.5L16 29l-3.5-9.5L3 16l9.5-3.5L16 3Z" stroke="currentColor" />
-              </svg>
+              <DetailingIcon />
             </div>
             <h3>{t('Refresh & refine')}</h3>
             <p>{t('A cleaner cabin. A more considered finish. Renew the details that make every drive feel special.')}</p>
@@ -197,19 +195,16 @@ function Direction() {
             </div>
             <div className="direction-links">
               <Link to="/signature-automotive-spa/">
-                {t('Automotive Spa')} <span className="dir-arrow">↗</span>
+                {t('Automotive Spa')} <DirArrow dir="ne" />
               </Link>
               <Link to="/signature-detailing/">
-                {t('Bespoke Detailing')} <span className="dir-arrow">↗</span>
+                {t('Bespoke Detailing')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
           <article className="direction-card">
             <div className="direction-top">
-              <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                <path d="M16 3 27 7v9c0 6-7 11-11 13C12 27 5 22 5 16V7L16 3Z" stroke="currentColor" />
-                <path d="m11 16 3 3 7-7" stroke="currentColor" />
-              </svg>
+              <PpfIcon />
             </div>
             <h3>{t('Protect the finish')}</h3>
             <p>{t('Plan protection around your vehicle’s surfaces, everyday use and the finish you want to preserve.')}</p>
@@ -220,19 +215,16 @@ function Direction() {
             </div>
             <div className="direction-links">
               <Link to="/signature-ppf/">
-                {t('Paint Protection Film')} <span className="dir-arrow">↗</span>
+                {t('Paint Protection Film')} <DirArrow dir="ne" />
               </Link>
               <Link to="/signature-ceramic-coating/">
-                {t('Ceramic Coating')} <span className="dir-arrow">↗</span>
+                {t('Ceramic Coating')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
           <article className="direction-card">
             <div className="direction-top">
-              <svg width={35} height={35} viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                <path d="m16 3 13 13-13 13L3 16 16 3Z" stroke="currentColor" />
-                <path d="m16 10 6 6-6 6-6-6 6-6Z" stroke="currentColor" />
-              </svg>
+              <BodyKitsIcon />
             </div>
             <h3>{t('Make it individual')}</h3>
             <p>{t('A more personal silhouette. A renewed character. Shape a car that feels unmistakably yours.')}</p>
@@ -243,10 +235,10 @@ function Direction() {
             </div>
             <div className="direction-links">
               <Link to="/signature-body-kits/">
-                {t('Body Kits')} <span className="dir-arrow">↗</span>
+                {t('Body Kits')} <DirArrow dir="ne" />
               </Link>
               <Link to="/signature-restoration/">
-                {t('Restoration')} <span className="dir-arrow">↗</span>
+                {t('Restoration')} <DirArrow dir="ne" />
               </Link>
             </div>
           </article>
@@ -262,7 +254,7 @@ function Direction() {
             </p>
           </div>
           <Link to="/signature-booking/" className="scl-page-cta">
-            {t('Discuss your car')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Discuss your car')} <DirArrow dir="ne" />
           </Link>
         </div>
       </div>

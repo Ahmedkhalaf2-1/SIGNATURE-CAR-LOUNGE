@@ -15,7 +15,7 @@
   inset-inline-end: 14px;
   width: 18px;
   height: 18px;
-  color: #c9aada;
+  color: var(--tint-violet-200);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -28,11 +28,11 @@
   width: min(100%, 328px);
   min-width: 288px;
   padding: 14px;
-  background: #14101b;
-  border: 1px solid #665271;
+  background: var(--surface-card);
+  border: 1px solid var(--border-muted);
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-  font: 14px/1.5 Manrope, Arial, sans-serif;
-  color: #f4eef7;
+  font: 14px/1.5 var(--font-sans);
+  color: var(--text-strong);
 }
 
 .dp__head {
@@ -71,8 +71,8 @@
   width: 36px !important;
   height: 36px;
   background: transparent;
-  color: #d9c1e8;
-  border: 1px solid #665271;
+  color: var(--tint-violet-100);
+  border: 1px solid var(--border-muted);
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
@@ -88,7 +88,7 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
 }
 
 .dp__nav:hover:not(:disabled) {
-  background: #2a1d36;
+  background: var(--surface-violet);
 }
 
 .dp__nav:disabled {
@@ -105,7 +105,7 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
 
 .dp__dow {
   padding: 6px 0;
-  color: #a893b6;
+  color: var(--text-muted);
   font-size: 10px;
   letter-spacing: 0.04em;
 }
@@ -116,7 +116,7 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
   display: grid;
   place-items: center;
   background: transparent;
-  color: #f4eef7;
+  color: var(--text-strong);
   border: 1px solid transparent;
   cursor: pointer;
   font-size: 14px;
@@ -124,22 +124,22 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
 }
 
 .dp__day:hover:not(:disabled) {
-  background: #2a1d36;
-  border-color: #665271;
+  background: var(--surface-violet);
+  border-color: var(--border-muted);
 }
 
 .dp__day.is-today {
-  border-color: #b58dcb;
+  border-color: var(--tint-violet-300);
 }
 
 .booking-form .dp__day.is-selected {
-  background: #d9c1e8;
-  color: #25172e;
+  background: var(--tint-violet-100);
+  color: var(--ink-strong);
   font-weight: 700;
 }
 
 .dp__day:disabled {
-  color: #6f6378;
+  color: var(--ink-muted);
   opacity: 0.45;
   cursor: not-allowed;
 }
@@ -147,7 +147,7 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
 .dp__nav:focus-visible,
 .dp__day:focus-visible,
 .dp__link:focus-visible {
-  outline: 2px solid #b58dcb;
+  outline: 2px solid var(--tint-violet-300);
   outline-offset: 1px;
 }
 
@@ -156,12 +156,12 @@ html[dir='rtl'] .dp__nav:not(.dp__nav--next) svg {
   justify-content: space-between;
   margin-top: 10px;
   padding-top: 10px;
-  border-top: 1px solid #3a2c46;
+  border-top: 1px solid var(--surface-violet);
 }
 
 .booking-form .dp__link {
   background: transparent;
-  color: #d9c1e8;
+  color: var(--tint-violet-100);
   border: 0;
   cursor: pointer;
   font-size: 12px;

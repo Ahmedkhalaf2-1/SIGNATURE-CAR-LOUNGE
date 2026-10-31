@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Seo } from '../components/common/Seo'
 import { useI18n } from '../i18n'
 import '../styles/pages/privacy.css'
+import { DirArrow } from '../components/common/Icons'
 
 function Hero() {
   const { t } = useI18n()
@@ -98,7 +99,9 @@ function End() {
           <p>{t('Start with a conversation about your vehicle and your priorities.')}</p>
         </div>
         <Link to="/signature-contact/" className="info-button">
-          {t('Get in touch ↗')}
+          <span>
+            {t('Get in touch')} <DirArrow dir="ne" />
+          </span>
         </Link>
       </div>
     </section>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useI18n } from '../../i18n'
-import { GlobeIcon, MenuIcon } from '../common/Icons'
+import { GlobeIcon, MenuIcon, DirArrow } from '../common/Icons'
 import { IMAGES } from '../../lib/assets'
 import { ROUTES, SERVICES } from '../../data/site'
 
@@ -12,6 +12,7 @@ const PLAIN_LINKS_BEFORE = [
 
 const PLAIN_LINKS_AFTER = [
   { to: ROUTES.cars, label: 'Cars for Sale' },
+  { to: ROUTES.visualizer, label: 'Visualizer' },
   { to: ROUTES.experience, label: 'Experience' },
   { to: ROUTES.gallery, label: 'Gallery' },
   { to: ROUTES.faq, label: 'FAQs' },
@@ -70,7 +71,7 @@ export function Header() {
           ))}
           <details className="scl-services-menu" ref={servicesRef}>
             <summary>
-              {t('Services')} <span aria-hidden="true">⌄</span>
+              {t('Services')} <DirArrow dir="chevron" />
             </summary>
             <div className="scl-submenu">
               <Link to={ROUTES.services}>{t('All Services')}</Link>
@@ -87,7 +88,7 @@ export function Header() {
             </Link>
           ))}
           <Link className="cta" to={ROUTES.booking}>
-            {t('Book Consultation')} <span className="dir-arrow" aria-hidden="true">↗</span>
+            {t('Book Consultation')} <DirArrow dir="ne" />
           </Link>
           <button
             className="lang-switch"
