@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber'
 import { AdditiveBlending, BackSide, CanvasTexture, DoubleSide, Object3D, SRGBColorSpace, type Group, type InstancedMesh } from 'three'
 import { ContactShadows, Environment, Lightformer, MeshReflectorMaterial } from '@react-three/drei'
 import { PURPLE, STUDIO } from '../constants'
+import { Atelier, useStoneTexture } from './Atelier'
 
 const { roomHalfWidth: HW, roomHalfDepth: HD, ceilingY, ceilingStripX, ceilingStripY, ceilingStripLength, ceilingStripWidth, sideStripX, sideStripY, sideStripTilt, sideStripLength, wallSlitZ, bay } = STUDIO
 
@@ -89,7 +90,7 @@ function WallPanels() {
   return (
     <instancedMesh ref={ref} args={[undefined, undefined, layout.length]} frustumCulled={false}>
       <boxGeometry args={[PANEL_W, PANEL_H, 0.08]} />
-      <meshStandardMaterial color="#202027" roughness={0.42} metalness={0.5} />
+      <meshStandardMaterial color="#0e0d14" roughness={0.3} metalness={0.7} />
     </instancedMesh>
   )
 }
@@ -132,7 +133,7 @@ function Room() {
       ).map(([p, ry, w], i) => (
         <mesh key={i} position={[p[0], p[1], p[2]]} rotation-y={ry}>
           <planeGeometry args={[w, ceilingY]} />
-          <meshStandardMaterial color="#0c0c10" roughness={0.8} metalness={0.2} emissive="#6a6b7c" emissiveMap={wash} emissiveIntensity={0.5} />
+          <meshStandardMaterial color="#0c0c10" roughness={0.8} metalness={0.2} emissive="#4a3d66" emissiveMap={wash} emissiveIntensity={0.2} />
         </mesh>
       ))}
       <WallPanels />
@@ -215,7 +216,7 @@ function Lights() {
       ).map(([x, z, w, d], i) => (
         <mesh key={i} position={[x, 0.006, z]} rotation-x={-Math.PI / 2}>
           <planeGeometry args={[w, d]} />
-          <meshBasicMaterial color={[0.5, 0.5, 0.56]} transparent opacity={0.55} depthWrite={false} />
+          <meshBasicMaterial color={[0.5, 0.5, 0.56]} transparent opacity={0.12} depthWrite={false} />
         </mesh>
       ))}
       {/* faint pool of light on the epoxy under the vehicle */}
@@ -277,19 +278,21 @@ function Reflections() {
 }
 
 function Floor({ resolution }: { resolution: number }) {
+  const stone = useStoneTexture()
   return (
     <mesh rotation-x={-Math.PI / 2}>
       <planeGeometry args={[HW * 2, HD * 2]} />
       {/* Polished dark epoxy. Metalness 1 keeps the specular F0 near black so the broad softboxes cannot wash the floor grey;
           the albedo is multiplied by the reflection, so a near-black colour needs a large mixStrength. */}
       <MeshReflectorMaterial
-        color="#0a0a0e"
-        metalness={1}
+        color="#040407"
+        map={stone}
+        metalness={0.04}
         roughness={0.72}
         blur={[420, 120]}
         mixBlur={1.5}
-        mixStrength={26}
-        mirror={1}
+        mixStrength={5}
+        mirror={0.85}
         resolution={resolution}
         depthScale={1.1}
         minDepthThreshold={0.3}
@@ -310,8 +313,8 @@ function KeyRig() {
       <directionalLight position={[7, 3.5, 2]} intensity={0.45} color="#dfe6ff" />
       <directionalLight position={[3, 4, -9]} intensity={1.3} color="#e9ecff" />
       {/* low, wide flank lights at wheel height */}
-      <directionalLight position={[9, 0.6, 1.5]} intensity={1.1} color="#f2f4ff" />
-      <directionalLight position={[-9, 0.6, -1.5]} intensity={0.9} color="#f2f4ff" />
+      <directionalLight position={[9, 0.6, 1.5]} intensity={0.45} color="#f2f4ff" />
+      <directionalLight position={[-9, 0.6, -1.5]} intensity={0.4} color="#f2f4ff" />
       <hemisphereLight args={['#c9ccff', '#08070b', 0.25]} />
     </>
   )
@@ -323,6 +326,7 @@ export function Studio({ reflectionResolution, exploded }: { reflectionResolutio
       <KeyRig />
       <Room />
       <Lights />
+      <Atelier compact={reflectionResolution < 500} />
       <Floor resolution={reflectionResolution} />
       <Reflections />
       {/* The shadow pass re-renders the whole vehicle, so it only runs after the vehicle changes shape (mount, explode,
