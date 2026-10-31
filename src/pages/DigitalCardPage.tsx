@@ -25,14 +25,14 @@ const RAYAN: CardPerson = {
   path: DIGITAL_CARD_PATH,
   phoneDisplay: '+966 50 432 8778',
   vcfName: 'Rayan-Al-Bakri.vcf',
-  contact: { givenName: 'Rayan SalahAldeen', familyName: 'Al Bakri', fullName: 'Rayan SalahAldeen Al Bakri', title: 'Owner', phone: '+966504328778', ...COMPANY },
+  contact: { givenName: 'Rayan', familyName: 'Al Bakri', fullName: 'Rayan Al Bakri', title: 'Owner', phone: '+966504328778', ...COMPANY },
 }
 
 const FAISAL: CardPerson = {
   path: '/connect/faisal',
   phoneDisplay: '+966 56 622 2312',
-  vcfName: 'Faisal-Albelushi.vcf',
-  contact: { givenName: 'Faisal Adel', familyName: 'Albelushi', fullName: 'Faisal Adel Albelushi', title: 'Owner / Partner', phone: '+966566222312', ...COMPANY },
+  vcfName: 'Faisal-Al-Belushi.vcf',
+  contact: { givenName: 'Faisal', familyName: 'Al Belushi', fullName: 'Faisal Al Belushi', title: 'Owner / Partner', phone: '+966566222312', ...COMPANY },
 }
 
 function DigitalCard({ person }: { person: CardPerson }) {
