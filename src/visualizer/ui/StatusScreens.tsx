@@ -4,13 +4,13 @@ import { IMAGES } from '../../lib/assets'
 import { ROUTES } from '../../data/site'
 import { useI18n } from '../../i18n'
 
-export function LoadingScreen({ done, vehicleName }: { done: boolean; vehicleName?: string }) {
+export function LoadingScreen({ done, vehicleName, overlay }: { done: boolean; vehicleName?: string; overlay?: boolean }) {
   const { t } = useI18n()
   return (
-    <div className={`viz-loading${done ? ' is-done' : ''}`} role="status" aria-live="polite" aria-hidden={done}>
+    <div className={`viz-loading${done ? ' is-done' : ''}${overlay ? ' viz-loading--page' : ''}`} role="status" aria-live="polite" aria-hidden={done}>
       <img src={IMAGES.logo} alt="" width={64} height={64} />
-      <h2 className="viz-loading__title">{vehicleName ? `${t('Loading')} ${vehicleName}` : t('Preparing Studio')}</h2>
-      {vehicleName && <p className="viz-loading__sub">{t('Preparing Studio')}</p>}
+      {vehicleName && <p className="viz-loading__sub">{t('Preparing Your Vehicle')}</p>}
+      <h2 className="viz-loading__title">{vehicleName ?? t('Preparing Studio')}</h2>
       <span className="viz-loading__bar" aria-hidden="true" />
     </div>
   )

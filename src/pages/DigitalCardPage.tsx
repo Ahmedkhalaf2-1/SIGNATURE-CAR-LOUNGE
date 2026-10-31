@@ -64,19 +64,19 @@ export default function DigitalCardPage() {
           <ul className="card__contacts">
             <li>
               <a className="contact" href={`tel:${CONTACT.phone}`}>
-                <PhoneIcon size={18} />
+                <PhoneIcon size={24} />
                 <span>+966 56 688 5580</span>
               </a>
             </li>
             <li>
               <a className="contact" href={`mailto:${CONTACT.email}`}>
-                <MailIcon size={18} />
+                <MailIcon size={24} />
                 <span>{CONTACT.email}</span>
               </a>
             </li>
             <li>
               <a className="contact" href={CONTACT.url} target="_blank" rel="noopener noreferrer">
-                <GlobeIcon size={18} />
+                <GlobeIcon size={24} />
                 <span>signaturecarslounge.com</span>
               </a>
             </li>
