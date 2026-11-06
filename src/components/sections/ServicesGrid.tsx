@@ -24,7 +24,6 @@ export function ServicesGrid() {
           {HOME_SERVICE_CARDS.map((s, i) => (
             <Link key={s.key} className={`service s${i}`} to={s.path}>
               <img loading="lazy" src={s.image} alt={t(s.alt)} />
-              <span className="svc-index">{String(i + 1).padStart(2, '0')} / 06</span>
               <div className="svc-info">
                 <span className="kicker">{t('Expertise')}</span>
                 <h3>{t(s.title)}</h3>

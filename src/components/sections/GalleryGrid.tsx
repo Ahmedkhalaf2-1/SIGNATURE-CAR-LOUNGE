@@ -63,7 +63,7 @@ export function GalleryGrid() {
             >
               <img loading="lazy" src={s.src} alt={t(s.alt)} />
               <span>
-                {t('VIEW')} / {String(i + 1).padStart(2, '0')} <ArrowIcon />
+                {t('VIEW')} <ArrowIcon />
               </span>
             </a>
           ))}
